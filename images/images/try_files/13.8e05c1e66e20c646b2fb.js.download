@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[13],{817:function(n,e,r){"use strict";r.r(e),r.d(e,"sendSalesforcePixel",(function(){return c}));r(23),r(3),r(31);var i=r(185),o=r(36),c=function(){var n=["j","sfmc_sub","l","u","jb","mid"],e=o.a.stringToObject(window.location.href),r=Object.keys(e);if(n.every((function(n){return-1!==r.indexOf(n)}))){var c=[];n.forEach((function(n){return c.push(n+"="+e[n])})),Object(i.a)("profile/crm/sf_1px.png?"+c.join("&"))}}}}]);
-//# sourceMappingURL=13.9a71f27f4736ddbc5b67308353164714.js.map

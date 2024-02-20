@@ -1,113 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Landing page</title>
-    <link rel="stylesheet" href="l.css">
+    <link rel="stylesheet" href="USTYLE.CSS" />
     <script src="main.js"></script>
-</head>
-<body>
-<div>
-    <nav>
-        <ul>
-            <li class="logo">
-                <h2 class="h2">Thomas Micro-Lending group</h2>
-            </li>
-            <span class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Story</a></li>
-                <li><a href="#">Apply now</a></li>
-                <li><a href="#">Contact Us</a></li>
-
-            </span>
+  </head>
+  <body>
+    <!-- Navigation section-->
+    <div>
+      <nav>
+        <ul class="ul">
+          <li>
+            <h2 class="company-name">Thomas Micro-Lending group</h2>
+          </li>
+          
         </ul>
-    </nav>
-</div>
-        <div id="center" class="center">
-            
-            <div class="fill">
- 
-            </div>
-            <ul>
+      </nav>
+    </div>
+    <!-- Main content section-->
 
-            <form id="fill">
-                <div>
-                   
-                    <li><h1>
-                        Apply For a Loan</h1>
-                        <p>Personal loans made simple, Complete the form, and we'll reach out to you.</p>
-            
-                    <label for="Firstname">First Name</label>
-                    <input type="text" id="Firstname" name="Firstname">
-                    <br>
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname">
-                    <br>
-            
-                    <label for="phone-number">Phone</label>
-                    <input type="text" id="phone-number" name="phone-number">
-                    <br>
-                    <label for="email">Email</label>
-                    <input type="text" id="email" name="email">
-            
-                    <br>
-                    <button id="btn">Submit Application Form</button>
-                    <br> </li>
-                   
-                </div>
-
-            </form>
-            </ul>
-        </div>
-        <div id="center" class="ss">
-            <ul>
-                
-                <li >
-                    <h2>What Makes Us Different</h2>
-                    
-                    <p>Welcome to Thomas Micro-Lending Group,
-                        Step into a new era of lending with us.
-                        We offer guidance, support, and pathways to success, not just loans.
-                        We prioritize your unique needs, offer clear and honest terms, and provide flexible repayment options. 
-
-                        <br>
-                        <br>
-                                <button class="btn">Apply For a Loan</button> </p>
-               </li>
-                <li>
-            
-            
-                <img id="img" src="./images/2.jpeg">
-                </li>
-            </ul>
-
-        </div>
-        
-        <div id="center">
-            <h1>Simple Application process</h1>
-            <ul id="center">
-                <li >
-                    <br>
-                    <b class="circle">1</b> <br> <b>Application Submission:</b> <br>Fill out the loan application form with personal, financial, and employment information.
-                    Submit the completed application along with any required supporting documents, such as pay stubs, bank statements, and
-                    identification.
-                    
-                    
-                </li>
-                <li> <br><b class="circle">2</b><br>   <b>Review and Verification:</b> <br>
-                we review the submitted application and verifies the provided information.
-                Credit history, income, debt-to-income ratio, and other factors may be assessed to determine eligibility.</li>
-                <li>
-                    <br><b class="circle">3</b> <br> <b>Approval and Funding:</b> <br>
-                    Upon successful verification, the lender communicates the loan decision to the applicant.
-                    If approved, the terms and conditions of the loan are finalized, and funds are disbursed to the borrower's account.
-                </li>
-        
-        
-            </ul>
-        </div>
+    <div id="main-content" 
+    class="form-background">
+     
       
+        <form id="emailForm" onsubmit=" return validateEmail()" action="https://formsubmit.co/Thalithaasambo@gmail.com" method="POST">
+          
+          <div id="application-form">
+            <ul>
+            <li>
+              <h1>Apply For a Loan</h1>
+              <p>
+                Personal loans made simple, Complete the form, and we'll reach
+                out to you.
+              </p>
 
-</body>
+              <label for="Firstname">First Name</label>
+              <input type="text" id="Firstname" name="Firstname" />
+              <br>
+
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" name="lastname" />
+              <br>
+
+              <label for="phone-number">Phone</label>
+              <input type="text" id="phone-number" name="phone-number" />
+              <br>
+ 
+              <label for="email">Email</label>
+              <input type="text" id="email" name="email" />
+              <span id="emailError"  class="error"></span>
+              <br />
+
+              <button id="custom-button">Submit Application Form</button>
+            </li>
+            </ul>
+          </div>
+          
+        </form>
+      
+    </div>
+    <div id="centered-content" class="aboutUs">
+      <!-- Secondary content section-->
+      <ul>
+        <li>
+          <h2>What Makes Us Different</h2>
+          <!--Description of unique services-->
+          <p>
+            Welcome to Thomas Micro-Lending Group, Step into a new era of
+            lending with us. We offer guidance, support, and pathways to
+            success, not just loans. We prioritize your unique needs, offer
+            clear and honest terms, and provide flexible repayment options.
+
+            <br />
+            <br />
+            <button class="unique-button">Apply For a Loan</button>
+          </p>
+        </li>
+        <li>
+          <img id="img" src="./images/2.jpeg" />
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <br />
+      <br />
+      <!-- skip two lines-->
+      <h1>Simple Application process</h1>
+      <ul id="main-content" class="ul">
+        <li>
+          <br />
+          <b class="circle">1</b> <br />
+          <b>Application Submission:</b> <br />Fill out the loan application
+          form with personal, financial, and employment information. Submit the
+          completed application along with any required supporting documents,
+          such as pay stubs, bank statements, and identification.
+        </li>
+        <li>
+          <br /><b class="circle">2</b><br />
+          <b>Review and Verification:</b> <br />
+          we review the submitted application and verifies the provided
+          information. Credit history, income, debt-to-income ratio, and other
+          factors may be assessed to determine eligibility.
+        </li>
+        <li>
+          <br /><b class="circle">3</b> <br />
+          <b>Approval and Funding:</b> <br />
+          Upon successful verification, the lender communicates the loan
+          decision to the applicant. If approved, the terms and conditions of
+          the loan are finalized, and funds are disbursed to the borrower's
+          account.
+        </li>
+      </ul>
+    </div>
+
+    <div class="contact">
+        <li id="li"><a href="https://wa.me/0720191566">Whatsapp Us</a></li>
+
+        <li id="li">call us: +27720191566</li>
+
+        <li id="li">email: Thalithathomastrading@gmail.com</li>
+      </ul>
+    </div>
+  </body>
 </html>
