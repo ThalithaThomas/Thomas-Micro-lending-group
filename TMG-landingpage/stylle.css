@@ -1,0 +1,515 @@
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+nav {
+  background-color: white;
+  box-shadow: 3px 3px 5px rgb(189, 182, 182);
+}
+nav ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-size: medium;
+}
+.menu-button {
+  display: none;
+}
+
+nav li {
+  margin-right: 10px;
+  height: 90px;
+}
+nav a {
+  align-items: center;
+  display: block;
+  color: rgb(19, 16, 16);
+  justify-content: center;
+  text-size-adjust: large;
+  padding: 30px;
+  padding-bottom: -5px;
+}
+nav a:hover {
+  background-color: #f0f0f0;
+}
+nav li:first-child {
+  margin-right: auto;
+  text-align: center;
+}
+.company-name {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+}
+@media screen and (max-width: 425px) {
+  .company-name {
+    white-space: nowrap;
+    font-size: medium;
+  }
+  .company-name a {
+    padding: 100px 0 0 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .company-name {
+    white-space: nowrap;
+    font-size: medium;
+  }
+  .company-name a {
+    padding: 100px 0 0 10px;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgb(29, 27, 27, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+.sidebar li {
+  width: 100%;
+}
+.sidebar a {
+  width: 100%;
+}
+.menu-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hideOnMobile {
+    display: none;
+  }
+  .menu-button {
+    display: block;
+  }
+}
+
+.container {
+  background-image: url(./images/stressedback.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  padding: 2%;
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 768px) {
+  .container {
+    background-image: none;
+  }
+}
+
+.application-form {
+  background-color: rgb(244, 193, 152);
+  padding: 1%;
+  font-family: "Times New Roman", Times, serif;
+  width: 30%;
+  height: 50%;
+
+  border-radius: 8px;
+}
+.application-form h1 {
+  white-space: nowrap;
+}
+.application-form p {
+  max-width: 200px;
+}
+.application-form label {
+  display: block;
+  margin-bottom: 5px;
+}
+.application-form button {
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: rgb(97, 96, 95);
+  color: white;
+  width: 150px;
+  height: 26px;
+}
+.application-form input,
+textarea {
+  border-radius: 8px;
+  border: none;
+  line-height: 27px;
+  justify-content: center;
+  text-align: center;
+}
+.application-form h4 span {
+  font-weight: normal;
+  background-color: orangered;
+  color: white;
+  line-height: 2;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    margin: 0%;
+    padding: 0%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .application-form {
+    width: 65%;
+    height: 70vh;
+    padding: 40px 40px 0 40px;
+    margin-left: 5%;
+    margin: o auto;
+    font-size: small;
+    justify-content: center;
+  }
+  .application-form h1 {
+    text-align: start;
+  }
+}
+
+.personal-details {
+ background-color: rgb(244, 193, 152);
+  padding: 5%;
+  margin: 0 10% 10% 10%;
+  border-radius: 8px;
+
+
+}
+.personal-details label {
+  display: block;
+  justify-content: center;
+  scroll-margin-top: 25px;
+  margin-top: 20px;
+}
+.personal-details :placeholder-shown {
+  margin-right: 10px;
+  padding-left: 2%;
+}
+.personal-details input,
+textarea {
+  width: 100%;
+  line-height: 28px;
+  border-radius: 4px;
+  border: none;
+
+}
+
+.personal-details button {
+  background-color: rgb(17, 17, 17);
+  color: white;
+  width: 110px;
+  line-height: 26px;
+  border: none;
+  margin-top: 16px;
+  border-radius: 4px;
+}
+.personal-details h1 {
+  text-align: center;
+
+  font-weight: normal;
+}
+
+.aboutUs {
+  /* Set background color with specified hex code */
+  background-color: #ebe8e8e0; /* Setting the background color using a specified hex code. */
+  /* Set background size to contain */
+  background-size: contain; /* Setting the background size to contain to ensure proper scaling. */
+  /* Set width to 80% */
+  width: 80%;
+  /* Set height to 10% */
+  height: 10%;
+  /* Center align the content */
+  justify-content: center; /* Aligning content to the center. */
+}
+#centered-content {
+  /* Center align the text inside the element */
+  text-align: center;
+  margin: 0 auto;
+  padding: 2% 0% 2% 2%;
+}
+@media screen and (max-width: 768px) {
+  .aboutUs {
+    width: 116%;
+  }
+  .aboutUs img {
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+
+  #centered-content {
+    margin-left: 7%;
+    pad: 2%;
+  }
+}
+.aboutUs button {
+  background-color: orangered;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  width: 100px;
+}
+h1 {
+  justify-content: center;
+  text-align: center;
+}
+
+.circle {
+  /* Set width and height to 40px */
+  width: 40px;
+  height: 40px;
+  /* Create a circular shape using border-radius */
+  border-radius: 20%;
+  /* Align content in center and align items in center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Add a 2px solid orange border */
+  border: 2px solid orange;
+  /* Set text color to orange */
+  color: orange;
+  /* Set font size to 16px */
+  font-size: 16px;
+}
+.contact {
+  display: flex;
+  /* Set background color to black */
+  background-color: black;
+  /* Set text color to white */
+  /* Set width to auto to adjust based on content */
+  width: auto;
+  /* Add 3% padding around the element */
+  padding: 3%;
+  /* Set right margin to 10px */
+  margin-right: 10px;
+  /* Set text decoration line to underline */
+  text-decoration-line: underline;
+  /* Set text decoration color to orangered */
+  text-decoration-color: orangered;
+  /* Prevent line break */
+  white-space: nowrap;
+}
+
+#contact {
+  /* Set text color to black */
+  color: black;
+  /* Set right margin to 10px */
+  margin-right: 10px;
+  /* Set space between items */
+  justify-content: space-between; /* Invalid property, please provide the correct property or remove the comment. */
+  /* Set right margin to 129px */
+  margin-right: 129px;
+  /* Remove default list styles */
+  list-style: none;
+}
+@media screen and (max-width: 600px) {
+  .contact{
+  display: none;
+  }
+  #contact{
+    display: none;
+  }
+}
+a {
+  /* Set text color to specified RGB value */
+  color: orangered;
+
+  /* Set right margin to 10px */
+  margin-right: 10px;
+}
+.unique-button {
+  /* Set width to 160px */
+  width: 160px;
+  /* Set height to 20px */
+  height: 20px;
+  /* Set background color using specified RGB values */
+  background-color: rgb(255, 123, 0);
+  /* Set text color to white */
+  color: white;
+  /* Set border radius for the button */
+  border-radius: 20px 20px 20px 20px;
+  /* Remove border from the button */
+  border: none;
+}
+#custom-button {
+  background-color: orangered;
+  color: white;
+}
+.application {
+  /* Set display style to flex and justify content to flex-start */
+  display: flex;
+  justify-content: flex-start;
+  /* Set right margin to 10px */
+  margin-right: 10px;
+  /* Set text color using RGBA values for transparency */
+  color: rgba(11, 10, 10, 0.834);
+}
+@media screen and (max-width: 768px) {
+  .application {
+    display: block;
+    margin: 5%;
+  }
+}
+.contact-container {
+  background-color: rgba(22, 22, 23, 0.903);
+  color: white;
+  width: 50%;
+  height: 50vh;
+  padding: 80px;
+  text-align: start;
+  padding-left: 10%;
+  padding-bottom: 7%;
+}
+.contact-container a {
+  color: orangered;
+  font-size: small;
+}
+#contact-container {
+  color: white;
+}
+.contact-container h1 {
+  font-weight: normal;
+  font-size: 2em;
+  text-align: start;
+}
+.contact-container li {
+  justify-content: center;
+}
+.contact-details {
+  background-color: orangered;
+  width: 30%;
+  height: 50%;
+  display: flex;
+  padding-bottom: 80px;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50%;
+}
+.contact-details input {
+  margin-bottom: 10px;
+  line-height: 20px;
+  border: none;
+}
+.contact-details #message {
+  width: 200px;
+  height: 150px;
+}
+
+.contact-details button {
+  background-color: rgb(57, 56, 56);
+  line-height: 20px;
+  color: white;
+  border: none;
+  border-radius: 1px;
+}
+@media screen and (max-width: 768px){
+  .contact-container {
+   margin: 7%;
+ 
+}
+.contact-details{
+  display: none;
+}
+
+}
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 400px;
+}
+.body {
+  background-image: url(./images/happyw.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.vision {
+  max-width: 700px;
+  justify-content: center;
+  text-align: center;
+
+  padding: 1%;
+  margin-left: 20%;
+  border-radius: 8px;
+}
+.about-us-content {
+  padding: 1%;
+}
+
+.about-us-content ul {
+  display: flex;
+}
+
+.about-us-content img {
+  width: 80%;
+  margin: 0 auto;
+  margin-left: 9%;
+  border-radius: 8px;
+  justify-content: center;
+  text-align: center;
+
+}
+.item-box1 {
+  padding-left: 10%;
+  max-width: 1000px;
+}
+.vision-mission-box {
+  background-color: white;
+  border: 1px solid;
+  border-color: orangered;
+  padding: 1%;
+  margin-left: 5%;
+  width: 300px;
+  border-radius: 8px;
+}
+.vision-mission-box:hover{
+  color: orangered;
+}
+@media screen and (max-width: 768px) {
+  .about-us-content ul {
+    display: block;
+    margin-bottom: 2%;
+  }
+  .vision-mission-box {
+    margin-top: 9%;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .about-us-content ul {
+    display: block;
+    margin-bottom: 2%;
+  }
+  .vision-mission-box {
+    margin-top: 9%;
+    justify-content: center;
+  }
+}
+#vision-mission {
+  background-color: rgb(188, 185, 185);
+  margin-top: 2%;
+  padding: 2% 0 2% 0;
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  body {
+   margin-left: 29%;
+}

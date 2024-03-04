@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="stylle.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+     <nav >
+      <ul class="sidebar">
+       <li onclick="hideSidebar()">
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26"
+              viewBox="0 96 960 960"
+              width="26"
+            >
+              <path
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              /></svg
+          ></a>
+        </li>
+        <li><a href="index.html"></i>Home</a></li>
+        <li><a href="#"></i>About</a></li>
+        <li><a href="personal.html"></i>Apply</a></li>
+        <li><a href="contact.html"></i></i>Contact us</a></li>
+      </ul>
+      <ul>
+        <li ><h2 class="company-name"> <a href="#"></a>Thomas Micro-Lending Group</h2></li>
+        <li class="hideOnMobile"><a href="index.html" ></i>Home</a></li>
+        <li class="hideOnMobile"><a href="about.html">About</a></li>
+        <li class="hideOnMobile"><a href="personal.html">Apply</a></li>
+        <li class="hideOnMobile"><a href="contact.html"></i>Contact us</a></li>
+        <li class="menu-button" onclick="showSidebar()">
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26"
+              viewBox="0 96 960 960"
+              width="26"
+            >
+              <path
+                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+              /></svg
+          ></a>
+        </li>
+      </ul>
+    </nav>
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
+  
+    <div class="personal-details">
+      <form action="">
+        <h1>Personal Details</h1>
+
+        <label for="title">Title</label>
+        <select name="title" id="title">
+          <option value="Mr">Mr</option>
+          <option value="Mrs">Mrs</option>
+          <option value="Ms">Ms</option>
+        </select>
+        <label for="ID"> South African ID</label>
+        <input type="text" id="ID" name="ID" />
+        <label for="Firstname">First Name</label>
+        <input type="text" id="Firstname" name="Firstname" />
+        <br />
+        <label for="lastname">Last Name</label>
+        <input type="text" id="lastname" name="lastname" />
+        <br />
+        <label for="phone-number">CellPhone number</label>
+        <input type="text" id="phone-number" name="phone-number" />
+        <br />
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" />
+        <span id="emailError" class="error"></span>
+        <br />
+        
+            </select>
+            <label for="employmentStatus">Employment Status</label>
+            <select id="employmentStatus" name="employmentStatus">
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="student">Student</option>
+            <option value="self-employed">Self-Employed</option>
+            <option value="statePension">State Pension / Grant</option>
+            </select>
+            <label for="startDate">Employment Start Date</label>
+            <input type="date" id="startDate" name="startDate" required>
+            <label for="salaryFrequency">Salary Frequency</label>
+            <select id="salaryFrequency" name="salaryFrequency">
+            <option value="selectWageType">Select Wage Type</option>
+            <option value="monthly">Monthly</option>
+            <option value="fortnightly">Fortnightly</option>
+            <option value="weekly">Weekly</option>
+            </select>
+            <label for="Salary">Gross Salary Before Tax</label>
+            <input type="number" id="salary" name="salary">
+            <label for="net income">Net Income</label>
+            <input type="number" id="net income" name="net income">
+            <label for="living expenses">Living Expenses</label>
+
+            <input type="number" id="living expense" name="living expense" >
+           <button type="submit">Submit</button>
+        
+      </form>
+    </div>
+  </body>
+</html>
