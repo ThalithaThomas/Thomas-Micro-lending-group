@@ -86,17 +86,17 @@ def submit_loan_request():
                                     livingEXpenses=int(livingEXpenses)
                     )
         db.session.add(new_applicant)
-        db.session.commit() # Commit the transaction
+        db.session.commit() 
         flash('Your loan request has been successfully submitted!', 'success')
     except IntegrityError:
-                db.session.rollback() # Rollback the session on error
+                db.session.rollback() 
                 flash('There was an integrity error. Please check your input.', 'error')
     except DataError:
                 db.session.rollback()
                 flash('There was an error with the data provided. Please check that all fields are correct.', 'error')
     except SQLAlchemyError as e:
                 db.session.rollback()
-                flash(f'An error occurred: {str(e)}', 'error') # General error message
+                flash(f'An error occurred: {str(e)}', 'error')
     except Exception as e:
             db.session.rollback()
             flash(f'An unexpected error occurred: {str(e)}', 'error')
