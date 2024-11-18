@@ -12,6 +12,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
+    />
 </head>
 <body>
     <nav >
@@ -55,16 +67,7 @@
         </li>
       </ul>
     </nav>
-    <script>
-      function showSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "flex";
-      }
-      function hideSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "none";
-      }
-    </script>
+    
     </div>
      <!-- Main content section-->
     <div class="container" >
@@ -118,7 +121,7 @@
           </p>
         </li>
         <li>
-          <img id="img" src="./images/2.jpeg" />
+          <img id="img" src="/static/images/2.jpeg" />
         </li>
       </ul>
     </div>
@@ -168,6 +171,39 @@
       </ul>
     </div>
 
- <div class="financial-details"></div>
+ <div >
+  
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+  <ul class="flashed-messages">
+    {% for category, message in messages %}
+    <li {{ category }}>{% if category == 'success' %}
+      <i class="fa-solid fa-circle-check" style="color: green;"></i>{{ message }} <i class="fa-thin fa-xmark"onclick="hideMessage(this)"></i>
+      {% elif category=='error' %}
+      <i class="fa-regular fa-circle-xmark"  style="color: red;"></i>{{ message }}<i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+       {% elif category=='warning' %} 
+       <i class="fa-regular fa-circle-exclamation"></i>{{ message }}<i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+      {% elif category=='info' %} 
+       <i class="fa-light fa-circle-info"></i>{{ message }}<i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+        {%  endif %}
+    </li>
+    {% endfor %}
+
+  </ul>
+  {%  endif %}
+  {% endwith %}
+</div>
+ </div>
+ <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+    </script>
 </body>
 </html>
