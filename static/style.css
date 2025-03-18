@@ -1,27 +1,50 @@
 * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-decoration: none;
 }
 
-nav {
-  background-color: white;
-  box-shadow: 3px 3px 5px rgb(189, 182, 182);
+/* Typography */
+h1 {
+  justify-content: center;
+  text-align: center;
 }
-nav ul {
+
+a {
+  color: orangered;
+  margin-right: 10px;
+}
+
+/* Navigation Styles */
+
+nav {
   width: 100%;
+  max-width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  top: 0;
+  height: 6rem;
+  min-height: 6rem;
+  background-color: white;
+  box-shadow: 0 4px 6px -6px rgb(189, 182, 182);
+  padding: 1rem 2rem;
+  position: sticky; /* Add this */
+}
+nav ul {
+  display: flex;
+  justify-content: center; /* Centers the navigation items */
+  align-items: center;
   text-align: center;
   font-size: medium;
 }
-.menu-button {
-  display: none;
-}
-
 nav li {
   margin-right: 10px;
   height: 90px;
 }
+
 nav a {
   align-items: center;
   display: block;
@@ -29,40 +52,22 @@ nav a {
   justify-content: center;
   text-size-adjust: large;
   padding: 30px;
-  padding-bottom: -5px;
 }
+nav h2 a:hover {
+  background-color: transparent;
+}
+
 nav a:hover {
-  background-color: #f0f0f0;
+  font-weight: 700;
 }
-nav li:first-child {
-  margin-right: auto;
-  text-align: center;
-}
+
 .company-name {
-  display: flex;
-  align-items: center;
   font-size: x-large;
 }
-@media screen and (max-width: 425px) {
-  .company-name {
-    white-space: nowrap;
-    font-size: medium;
-  }
-  .company-name a {
-    padding: 100px 0 0 0;
-  }
+.tmlg {
+  display: none;
 }
-
-@media screen and (max-width: 768px) {
-  .company-name {
-    white-space: nowrap;
-    font-size: medium;
-  }
-  .company-name a {
-    padding: 100px 0 0 10px;
-  }
-}
-
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
   top: 0%;
@@ -78,30 +83,21 @@ nav li:first-child {
   align-items: flex-start;
   justify-content: flex-start;
 }
-@media (max-width: 400px) {
-  .sidebar {
-    width: 100%;
-  }
-}
+
 .sidebar li {
   width: 100%;
 }
+
 .sidebar a {
   width: 100%;
 }
+
 .menu-button {
   display: none;
+  font-size: 1.9rem;
 }
 
-@media (max-width: 768px) {
-  .hideOnMobile {
-    display: none;
-  }
-  .menu-button {
-    display: block;
-  }
-}
-
+/* Container Styles */
 .container {
   background-image: url(./images/stressedback.jpg);
   background-attachment: fixed;
@@ -110,31 +106,33 @@ nav li:first-child {
   padding: 2%;
   margin-bottom: 40px;
 }
-@media screen and (max-width: 768px) {
-  .container {
-    background-image: none;
-  }
-}
 
+/* Application Form Styles */
 .application-form {
   background-color: rgb(244, 193, 152);
-  padding: 1%;
+  padding: 1% 4%;
   font-family: "Times New Roman", Times, serif;
   width: 30%;
   height: 50%;
-
   border-radius: 8px;
+  box-sizing: border-box;
+}
+.application-form form {
+  max-width: 100%;
 }
 .application-form h1 {
   white-space: nowrap;
 }
+
 .application-form p {
-  max-width: 200px;
+  max-width: 90%;
 }
+
 .application-form label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 0.5rem;
 }
+
 .application-form button {
   margin-top: 20px;
   border-radius: 8px;
@@ -144,6 +142,7 @@ nav li:first-child {
   width: 150px;
   height: 26px;
 }
+
 .application-form input,
 textarea {
   border-radius: 8px;
@@ -152,6 +151,7 @@ textarea {
   justify-content: center;
   text-align: center;
 }
+
 .application-form h4 span {
   font-weight: normal;
   background-color: orangered;
@@ -161,48 +161,32 @@ textarea {
   border-radius: 4px;
 }
 
-@media screen and (max-width: 768px) {
-  * {
-    margin: 0%;
-    padding: 0%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .application-form {
-    width: 65%;
-    height: 70vh;
-    padding: 40px 40px 0 40px;
-    margin-left: 5%;
-    margin: o auto;
-    font-size: small;
-    justify-content: center;
-  }
-  .application-form h1 {
-    text-align: start;
-  }
-}
-
+/* Personal Details Form Styles */
 .personal-details {
   background-color: rgb(244, 193, 152);
   padding: 5%;
   margin: 0 10% 10% 10%;
   border-radius: 8px;
 }
+
 .personal-details li {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .personal-details label {
   display: block;
   justify-content: center;
   scroll-margin-top: 25px;
   margin-top: 20px;
 }
+
 .personal-details :placeholder-shown {
   margin-right: 10px;
   padding-left: 2%;
 }
+
 .personal-details input,
 textarea {
   width: 100%;
@@ -220,46 +204,27 @@ textarea {
   margin-top: 16px;
   border-radius: 4px;
 }
+
 .personal-details h1 {
   text-align: center;
-
   font-weight: normal;
 }
 
+/* About Us Styles */
 .aboutUs {
-  /* Set background color with specified hex code */
-  background-color: #ebe8e8e0; /* Setting the background color using a specified hex code. */
-  /* Set background size to contain */
-  background-size: contain; /* Setting the background size to contain to ensure proper scaling. */
-  /* Set width to 80% */
+  background-color: #ebe8e8e0;
+  background-size: contain;
   width: 80%;
-  /* Set height to 10% */
   height: 10%;
-  /* Center align the content */
-  justify-content: center; /* Aligning content to the center. */
+  justify-content: center;
 }
+
 #centered-content {
-  /* Center align the text inside the element */
   text-align: center;
   margin: 0 auto;
   padding: 2% 0% 2% 2%;
 }
-@media screen and (max-width: 768px) {
-  .aboutUs {
-    width: 116%;
-  }
-  .aboutUs img {
-    width: 60%;
-    height: auto;
-    margin-bottom: 20px;
-    margin: 0 auto;
-  }
 
-  #centered-content {
-    margin-left: 7%;
-    pad: 2%;
-  }
-}
 .aboutUs button {
   background-color: orangered;
   color: white;
@@ -268,107 +233,62 @@ textarea {
   margin-bottom: 8px;
   width: 100px;
 }
-h1 {
-  justify-content: center;
-  text-align: center;
-}
 
+/* Circle Number Styles */
 .circle {
-  /* Set width and height to 40px */
   width: 40px;
   height: 40px;
-  /* Create a circular shape using border-radius */
   border-radius: 20%;
-  /* Align content in center and align items in center */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* Add a 2px solid orange border */
   border: 2px solid orange;
-  /* Set text color to orange */
   color: orange;
-  /* Set font size to 16px */
   font-size: 16px;
 }
+
+/* Contact Styles */
 .contact {
   display: flex;
-  /* Set background color to black */
   background-color: black;
-  /* Set text color to white */
-  /* Set width to auto to adjust based on content */
   width: auto;
-  /* Add 3% padding around the element */
   padding: 3%;
-  /* Set right margin to 10px */
   margin-right: 10px;
-  /* Set text decoration line to underline */
   text-decoration-line: underline;
-  /* Set text decoration color to orangered */
   text-decoration-color: orangered;
-  /* Prevent line break */
   white-space: nowrap;
 }
 
 #contact {
-  /* Set text color to black */
   color: black;
-  /* Set right margin to 10px */
-  margin-right: 10px;
-  /* Set space between items */
-  justify-content: space-between; /* Invalid property, please provide the correct property or remove the comment. */
-  /* Set right margin to 129px */
   margin-right: 129px;
-  /* Remove default list styles */
   list-style: none;
 }
-@media screen and (max-width: 600px) {
-  .contact {
-    display: none;
-  }
-  #contact {
-    display: none;
-  }
-}
-a {
-  /* Set text color to specified RGB value */
-  color: orangered;
 
-  /* Set right margin to 10px */
-  margin-right: 10px;
-}
+/* Button Styles */
 .unique-button {
-  /* Set width to 160px */
   width: 160px;
-  /* Set height to 20px */
   height: 20px;
-  /* Set background color using specified RGB values */
   background-color: rgb(255, 123, 0);
-  /* Set text color to white */
   color: white;
-  /* Set border radius for the button */
-  border-radius: 20px 20px 20px 20px;
-  /* Remove border from the button */
+  border-radius: 20px;
   border: none;
 }
+
 #custom-button {
   background-color: orangered;
   color: white;
 }
+
+/* Application Process Styles */
 .application {
-  /* Set display style to flex and justify content to flex-start */
   display: flex;
   justify-content: flex-start;
-  /* Set right margin to 10px */
   margin-right: 10px;
-  /* Set text color using RGBA values for transparency */
   color: rgba(11, 10, 10, 0.834);
 }
-@media screen and (max-width: 768px) {
-  .application {
-    display: block;
-    margin: 5%;
-  }
-}
+
+/* Contact Container Styles */
 .contact-container {
   background-color: rgba(22, 22, 23, 0.903);
   color: white;
@@ -379,21 +299,27 @@ a {
   padding-left: 10%;
   padding-bottom: 7%;
 }
+
 .contact-container a {
   color: orangered;
   font-size: small;
 }
+
 #contact-container {
   color: white;
 }
+
 .contact-container h1 {
   font-weight: normal;
   font-size: 2em;
   text-align: start;
 }
+
 .contact-container li {
   justify-content: center;
 }
+
+/* Contact Details Styles */
 .contact-details {
   background-color: orangered;
   width: 30%;
@@ -404,11 +330,13 @@ a {
   align-items: center;
   margin-top: -50%;
 }
+
 .contact-details input {
   margin-bottom: 10px;
   line-height: 20px;
   border: none;
 }
+
 .contact-details #message {
   width: 200px;
   height: 150px;
@@ -421,14 +349,8 @@ a {
   border: none;
   border-radius: 1px;
 }
-@media screen and (max-width: 768px) {
-  .contact-container {
-    margin: 7%;
-  }
-  .contact-details {
-    display: none;
-  }
-}
+
+/* Box and Vision Styles */
 .box {
   position: relative;
   display: flex;
@@ -436,21 +358,23 @@ a {
   align-items: center;
   margin-left: 400px;
 }
+
 .body {
   background-image: url(./images/happyw.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
+
 .vision {
   max-width: 700px;
   justify-content: center;
   text-align: center;
-
   padding: 1%;
   margin-left: 20%;
   border-radius: 8px;
 }
+
 .about-us-content {
   padding: 1%;
 }
@@ -467,10 +391,12 @@ a {
   justify-content: center;
   text-align: center;
 }
+
 .item-box1 {
   padding-left: 10%;
   max-width: 1000px;
 }
+
 .vision-mission-box {
   background-color: white;
   border: 1px solid;
@@ -480,61 +406,37 @@ a {
   width: 300px;
   border-radius: 8px;
 }
+
 .vision-mission-box:hover {
   color: orangered;
 }
-@media screen and (max-width: 768px) {
-  .about-us-content ul {
-    display: block;
-    margin-bottom: 2%;
-  }
-  .vision-mission-box {
-    margin-top: 9%;
-  }
-}
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  .about-us-content ul {
-    display: block;
-    margin-bottom: 2%;
-  }
-  .vision-mission-box {
-    margin-top: 9%;
-    justify-content: center;
-  }
-}
+
 #vision-mission {
   background-color: rgb(188, 185, 185);
   margin-top: 2%;
   padding: 2% 0 2% 0;
 }
 
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  body {
-    margin-left: 29%;
-  }
-}
+/* Registration Styles */
 .registration {
   display: flex;
   margin: 10% 0 10% 20%;
 }
-@media screen and (max-width: 768px) {
-  .registration {
-    display: block;
-  }
-}
+
 .registration button {
   width: 140px;
   line-height: 24px;
-  border: 1px solid;
-  border-color: white;
+  border: 1px solid white;
   background-color: rgb(229, 163, 110);
   color: white;
   border-radius: 15px;
   margin-top: 20px;
 }
+
 .registration input {
   display: block;
 }
+
 .registration input,
 textarea {
   width: 200px;
@@ -543,18 +445,20 @@ textarea {
   border: none;
   margin-top: 2%;
 }
+
 .registration input[type="radio"] {
   display: inline;
 }
+
 .registration-box1 {
   width: 20%;
   height: 50vh;
   background-color: rgb(229, 163, 110);
   border-radius: 2px;
-
   padding: 5%;
   color: white;
 }
+
 .registration-box2 {
   width: 50%;
   height: 50vh;
@@ -562,22 +466,7 @@ textarea {
   padding: 5%;
 }
 
-@media screen and (max-width: 768px) {
-  .registration-box1 {
-    display: none;
-  }
-  .registration-box2 {
-    width: 50%;
-    height: 50vh;
-    background-color: rgb(248, 239, 239);
-    padding: 5%;
-  }
-  @media screen and (max-width: 768px) {
-    .registration-box2 {
-      background-color: white;
-    }
-  }
-}
+/* Login Styles */
 .log-in {
   display: block;
   margin: 10% 10% 10% 20%;
@@ -586,6 +475,7 @@ textarea {
   border-radius: 4px;
   padding-left: 25%;
 }
+
 .log-in button {
   margin-top: 3%;
   width: 100px;
@@ -595,21 +485,23 @@ textarea {
   color: white;
   border: none;
 }
+
 .log-in input,
 textarea {
   margin-top: 2%;
   width: 300px;
   line-height: 25px;
   border: none;
-  border-bottom: 1px solid;
-  border-color: grey;
+  border-bottom: 1px solid grey;
   border-radius: 8px;
 }
+
 .log-in p {
   font-size: 2em;
   color: black;
 }
 
+/* Flashed Messages Styles */
 .flashed-messages {
   font-size: small;
   width: fit-content;
@@ -624,27 +516,117 @@ textarea {
   left: 33%;
   z-index: 100000;
 }
+
 .flashed-messages ul {
   list-style: none;
 }
+
 .flashed-messages li {
   display: flex;
   padding: 10px;
   white-space: nowrap;
 }
+
 .flashed-messages li i {
   margin-right: 8px;
   vertical-align: middle;
   color: #f0eded;
   background-color: #292929;
 }
+
 .flashed-messages i {
   margin-left: 8px;
   vertical-align: middle;
   line-height: 1;
 }
+
 .flashed-messages li:last-child {
   align-self: flex-end;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+  .application-form {
+    padding: 3% 4%;
+    width: 36%;
+  }
+}
+@media screen and (max-width: 425px) {
+  nav {
+    width: 100%;
+    min-width: 100%;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 6rem;
+    min-height: 6rem;
+    background-color: white;
+    box-shadow: 0 4px 6px -6px rgb(189, 182, 182);
+    padding: 1rem 2rem;
+    position: sticky; /* Add this */
+  }
+  nav ul {
+    display: flex;
+    justify-content: center; /* Centers the navigation items */
+    align-items: center;
+    text-align: center;
+    font-size: medium;
+  }
+  nav li {
+    margin-right: 10px;
+    height: 90px;
+  }
+
+  nav a {
+    align-items: center;
+    display: block;
+    color: rgb(19, 16, 16);
+    justify-content: center;
+    text-size-adjust: large;
+    padding: 30px;
+  }
+  nav h2 a:hover {
+    background-color: transparent;
+  }
+
+  nav a:hover {
+    font-weight: 700;
+  }
+
+  .company-name {
+    display: none;
+  }
+
+  .tmlg {
+    display: block;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact,
+  #contact {
+    display: none;
+  }
+
+  .flashed-messages {
+    width: 76%;
+    border: 1px solid rgb(213, 212, 212);
+    border-radius: 12px;
+    background-color: #e7b0b0;
+    color: rgb(82, 81, 81);
+    font-size: smaller;
+    left: 7%;
+  }
+
+  .flashed-messages li {
+    white-space: normal;
+  }
+
+  .flashed-messages li i {
+    background-color: #e7b0b0;
+    color: rgb(82, 81, 81);
+  }
 }
 
 @media screen and (max-width: 568px) {
@@ -657,11 +639,144 @@ textarea {
     font-size: smaller;
     left: 7%;
   }
+
   .flashed-messages li {
     white-space: normal;
   }
+
   .flashed-messages li i {
     background-color: #e7b0b0;
     color: rgb(82, 81, 81);
+  }
+}
+@media screen and (max-width: 790px) {
+  nav li {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .company-name {
+    font-size: medium;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .application-form {
+    width: 100%;
+    height: 70vh;
+    padding: 40px 40px 0 40px;
+    margin-left: 5%;
+    margin: o auto;
+    font-size: small;
+    justify-content: center;
+  }
+  .application-form h1 {
+    font-size: 2rem;
+  }
+  .application-form h4 {
+    font-size: 1.5rem;
+    border-radius: 4px;
+  }
+
+  .application-form p {
+    max-width: 90%;
+    font-size: 1.5rem;
+  }
+
+  .application-form label {
+    font-size: 1.5rem;
+  }
+
+  .aboutUs {
+    width: 116%;
+  }
+  .aboutUs p {
+    font-size: 1.5rem;
+  }
+  .aboutUs a button {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    width: 10rem;
+  }
+
+  .aboutUs img {
+    width: 60%;
+    height: auto;
+    margin-bottom: 20px;
+    margin: 0 auto;
+  }
+
+  #centered-content {
+    margin-left: 7%;
+    pad: 2%;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    margin: 0;
+  }
+
+  .application {
+    display: block;
+    margin: 5%;
+  }
+
+  .about-us-content ul {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  .vision-mission-box {
+    margin-top: 9%;
+  }
+
+  .registration {
+    display: block;
+  }
+
+  .registration-box1 {
+    display: none;
+  }
+
+  .registration-box2 {
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(248, 239, 239);
+    padding: 5%;
+  }
+
+  .registration-box2 {
+    background-color: white;
+  }
+
+  .contact-container {
+    margin: 7%;
+  }
+
+  .contact-details {
+    display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  .about-us-content ul {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  .vision-mission-box {
+    margin-top: 9%;
+    justify-content: center;
   }
 }

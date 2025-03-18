@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Thomas Micro-Lending Group{% endblock %}</title>
+
+    <!-- External CSS Libraries -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+
+    <!-- Local Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/reset.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/navigation.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/forms.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/components.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+
+    {% block extra_css %}{% endblock %}
+  </head>
+  <body>
+    <!-- Navigation Section -->
+    <nav>
+      <!-- Main Navigation -->
+      <h2 class="company-name">
+        <a href="{{ url_for('home') }}">Thomas Micro-Lending Group</a>
+      </h2>
+      <h2 class="tmlg">
+        <a href="{{ url_for('home') }}">TMLG</a>
+      </h2>
+      <ul>
+        <li class="hideOnMobile"><a href="{{ url_for('home') }}">Home</a></li>
+        <li class="hideOnMobile"><a href="{{ url_for('about') }}">About</a></li>
+        <li class="hideOnMobile">
+          <a href="{{ url_for('personal') }}">Apply</a>
+        </li>
+        <li class="hideOnMobile">
+          <a href="{{ url_for('contact') }}">Contact us</a>
+        </li>
+
+        <!-- Mobile Menu Button -->
+        <li class="menu-button" onclick="showSidebar()">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26"
+              viewBox="0 96 960 960"
+              width="26"
+            >
+              <path
+                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
+              />
+            </svg>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Sidebar Navigation -->
+      <ul class="sidebar">
+        <li onclick="hideSidebar()">
+          <a href="#">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26"
+              viewBox="0 96 960 960"
+              width="26"
+            >
+              <path
+                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
+              />
+            </svg>
+          </a>
+        </li>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('personal') }}">Apply</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content Block -->
+    {% block content %}{% endblock %}
+
+    <!-- footer Section -->
+    <div class="footer">
+        <div>
+      <p>Find us on social media</p>
+      <ul class="contact">
+        <li id="contact">
+          <a href="https://wa.me/0720191566">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+        <li id="contact">
+          <a href="#">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+        <li id="contact">
+          <a href="#">
+            <i class="fa-solid fa-phone"></i>
+          </a>
+        </li>
+        </div>
+        <div id="footer">
+           <p> copyright &#169; 2025 Thomas Micro-Lending Group. All rights received.</p>
+        </div>
+      </ul>
+    </div>
+
+    <!-- Flash Messages Section -->
+    <div>
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <ul class="flashed-messages">
+        {% for category, message in messages %}
+        <li {{ category }}>
+          {% if category == 'success' %}
+          <i class="fa-solid fa-circle-check" style="color: green"></i>
+          {{ message }}
+          <i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+          {% elif category == 'error' %}
+          <i class="fa-regular fa-circle-xmark" style="color: red"></i>
+          {{ message }}
+          <i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+          {% elif category == 'warning' %}
+          <i class="fa-regular fa-circle-exclamation"></i>
+          {{ message }}
+          <i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+          {% elif category == 'info' %}
+          <i class="fa-light fa-circle-info"></i>
+          {{ message }}
+          <i class="fa-thin fa-xmark" onclick="hideMessage(this)"></i>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
+    </div>
+
+    <!-- Sidebar Toggle Script -->
+    <script>
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
+
+      function hideMessage(element) {
+        element.closest(".flashed-messages").style.display = "none";
+      }
+    </script>
+
+    {% block extra_js %}{% endblock %}
+  </body>
+</html>

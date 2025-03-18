@@ -79,10 +79,7 @@ nav li:first-child {
   padding-left: 10%;
   padding-bottom: 7%;
 }
-@media screen and (max-width: 768px) {
-  .contact-details {
-  }
-}
+
 .contact-container a {
   color: orangered;
   font-size: small;

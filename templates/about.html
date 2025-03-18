@@ -1,125 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title><link rel="stylesheet" href="/static/stylle.css">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css"
-    />
-</head>
-<body>
-    <nav >
-      <ul class="sidebar">
-       <li onclick="hideSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="26"
-              viewBox="0 96 960 960"
-              width="26"
-            >
-              <path
-                d="m249 849-42-42 231-231-231-231 42-42 231 231 231-231 42 42-231 231 231 231-42 42-231-231-231 231Z"
-              /></svg
-          ></a>
-        </li>
-        <li><a href="{{ url_for('home') }}"></i>Home</a></li>
-        <li><a href="{{ url_for('about') }}"></i>About</a></li>
-        <li><a href="{{ url_for('personal') }}"></i>Apply</a></li>
-        <li><a href="{{ url_for('contact') }}"></i></i>Contact us</a></li>
-      </ul>
-      <ul>
-        <li ><h2 class="company-name"> <a href="#"></a>Thomas Micro-Lending Group</h2></li>
-        <li class="hideOnMobile"><a href="{{ url_for('home') }}" ></i>Home</a></li>
-        <li class="hideOnMobile"><a href="{{ url_for('about') }}">About</a></li>
-        <li class="hideOnMobile"><a href="{{ url_for('personal') }}">Apply</a></li>
-        <li class="hideOnMobile"><a href="{{ url_for('contact') }}"></i>Contact us</a></li>
-        <li class="menu-button" onclick="showSidebar()">
-          <a href="#"
-            ><svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="26"
-              viewBox="0 96 960 960"
-              width="26"
-            >
-              <path
-                d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"
-              /></svg
-          ></a>
-        </li>
-      </ul>
-    </nav>
-    <script>
-      function showSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "flex";
-      }
-      function hideSidebar() {
-        const sidebar = document.querySelector(".sidebar");
-        sidebar.style.display = "none";
-      }
-    </script>
-    </div>
-     <!-- Main content section-->
-</head>
-<body>
-<div>
-    <div class="about-us-content">
-      <div class="item-box1">
-      <p><h1> About Us</h1>
+{% extends "base.html" %} {% block title %}About Us - Thomas Micro-Lending
+Group{% endblock %} {% block content %}
 
-Thomas Micro Lending Group is a financial institution dedicated to empowering individuals and small businesses through accessible and flexible micro-loans. Established in 2019, our mission is to bridge the gap in financial inclusion by providing innovative lending solutions to those underserved by traditional banking systems.
+<div class="aboutPage">
+  <div class="aboutTmlg">
+    <h1>About us</h1>
+    <ul class="item-box1">
+      <li>
+        <p>
+          Thomas Micro Lending Group is a financial institution dedicated to
+          empowering individuals and small businesses through accessible and
+          flexible micro-loans. Established in 2019, our mission is to bridge
+          the gap in financial inclusion by providing innovative lending
+          solutions to those underserved by traditional banking systems.
+        </p>
+      </li>
 
-</p>
-
-<p>
- 
+      <li>
+        
+          <h2>Vision:</h2><p></p> To empower individuals and businesses through
+          ethical and accessible financial solutions, fostering confidence and
+          security.
+        </p>
+      </li>
+      <li>
+  
+          <h2>Mission:</h2><p> We provide transparent, personalised lending
+          servises that nurture trust and empowerment, fostering financial
+          wellness and peace of mind.
+        </p>
+      </li>
+      <li>
+     
+          <h2>Motto:</h2><p></p>Join Us in Making a Difference Your partner in
+          prosperity- Empowerment,integrity and prosperity.
+        </p>
+      </li>
+    </ul>
+  </div>
 </div>
-<div >
-  <img src="./images/happyw.webp" alt="">
-</div>
-</div>
-
-
-
-<div class="about-us-content" id="vision-mission ">
-  <ul>
-    <li class="vision-mission-box"><h1>Vision</h1>
-    <p> To empower individuals and businesses through ethical and accessible financial solutions, fostering confidence and security.</p></li>
-    <li class="vision-mission-box"><h1>Mission</h1>
-    <p>We provide transparent, personalised lending servises that nurture trust and empowerment, fostering financial wellness and peace of mind.</p></li>
-    <li class="vision-mission-box"><h1>Motto</h1><p>Join Us in Making a Difference
-Your partner in prosperity- Empowerment,integrity and prosperity.
-
-    </p></li>
-  </ul>
-</div>
-</div>
-
-</body>
-
-</html>
+{% endblock %}
