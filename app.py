@@ -3,8 +3,8 @@ from flask import Flask,render_template,request,redirect,url_for,flash
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.exc import IntegrityError,SQLAlchemyError,DataError
 from datetime import datetime,date
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 
-app= Flask(__name__)
 app.secret_key=os.environ.get('FLASK_SECRET_KEY','default_secret_key')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
