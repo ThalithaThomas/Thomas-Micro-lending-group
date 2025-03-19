@@ -115,55 +115,40 @@ textarea {
 }
 
 /* Personal Details Form Styles */
-
 .personal-details {
-  background-color: rgb(244, 193, 152);
-  padding: 5%;
-  margin: 0 10% 10% 10%;
-  border-radius: 8px;
-}
-
-.personal-details li {
+  margin: 2rem auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.personal-details label {
-  display: block;
-  justify-content: center;
-  scroll-margin-top: 25px;
-  margin-top: 20px;
-}
-
-.personal-details :placeholder-shown {
-  margin-right: 10px;
-  padding-left: 2%;
-}
-
-.personal-details input,
-.personal-details textarea {
-  width: 100%;
-  line-height: 28px;
-  border-radius: 4px;
-  border: none;
-}
-
-.personal-details button {
-  background-color: rgb(17, 17, 17);
-  color: white;
-  width: 110px;
-  line-height: 26px;
-  border: none;
-  margin-top: 16px;
-  border-radius: 4px;
-}
-
 .personal-details h1 {
-  text-align: center;
-  font-weight: normal;
+  font-size: 1.6rem;
+  justify-content: left;
+  text-align: left;
 }
 
+.personal-details form {
+  width: min(700px, 90%);
+  font-size: 1rem;
+  padding: 3rem 4rem;
+  background-color: #efeded;
+  border-radius: 8px;
+}
+.personal-details form li {
+  margin-top: 0.9rem;
+}
+.personal-details form li input {
+  width: 100%;
+  height: 1.8rem;
+  background-color: #c1bebe;
+  padding: 0.5rem;
+}
+.personal-details form button {
+  background-color: rgb(39, 38, 38);
+  padding: 0.3rem 1.7rem;
+  color: white;
+  border-radius: 8px;
+}
 /* Registration Styles */
 .registration input {
   display: block;
@@ -213,26 +198,6 @@ textarea {
   border-radius: 8px;
 }
 
-/* Contact form styles */
-
-.contact-details input {
-  margin-bottom: 10px;
-  line-height: 20px;
-  border: none;
-}
-
-.contact-details #message {
-  width: 200px;
-  height: 150px;
-}
-
-.contact-details button {
-  background-color: rgb(57, 56, 56);
-  line-height: 20px;
-  color: white;
-  border: none;
-  border-radius: 1px;
-}
 /* layout.css - Layout containers and structural elements */
 
 /* Container Styles */
@@ -305,16 +270,18 @@ textarea {
   flex-direction: row;
   justify-content: space-between;
 }
-.footer p {
+.footer h2 {
   text-align: left;
   font-size: 1rem;
   padding: 1rem 0rem 0rem 2rem;
   color: rgb(243, 222, 193);
   font-weight: 530;
 }
-#footer {
-  color: rgb(243, 222, 193);
+
+.footer p {
+  color: rgb(141, 140, 140);
   padding: 1rem 0rem 0rem 2rem;
+  font-size: 0.8rem;
 }
 .contact {
   display: flex;
@@ -332,57 +299,6 @@ textarea {
 }
 
 /* Contact Container Styles */
-.contact-container {
-  background-color: rgba(22, 22, 23, 0.903);
-  color: white;
-  width: 50%;
-  height: 50vh;
-  padding: 80px;
-  text-align: start;
-  padding-left: 10%;
-  padding-bottom: 7%;
-}
-
-.contact-container a {
-  color: orangered;
-  font-size: small;
-}
-
-#contact-container {
-  color: white;
-}
-
-.contact-container h1 {
-  font-weight: normal;
-  font-size: 2em;
-  text-align: start;
-}
-
-.contact-container li {
-  justify-content: center;
-}
-
-/* Contact Details layout */
-.contact-details {
-  background-color: orangered;
-  width: 30%;
-  height: 50%;
-  display: flex;
-  padding-bottom: 80px;
-  justify-content: center;
-  align-items: center;
-  margin-top: -50%;
-}
-
-/* Box and Vision Styles */
-.box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 400px;
-}
-
 .body {
   background-image: url(./images/happyw.webp);
   background-repeat: no-repeat;
@@ -416,7 +332,44 @@ textarea {
   justify-content: center;
   align-items: center;
 }
-
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: auto;
+  margin: 3rem auto;
+  padding: 0.6rem auto;
+}
+.aboutPage p {
+  font-size: 1.2rem;
+}
+.aboutPage-box1 {
+  width: (600px, 97%);
+  text-align: center;
+}
+.aboutPage-box1 h1 {
+  margin: 1.4rem 0;
+}
+.aboutPage-box2 {
+  width: 100%;
+}
+.aboutPage-box2 h2 {
+  font-size: 1.3rem;
+}
+.aboutPage-box2 ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1rem;
+}
+.aboutPage-box2 li {
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
+}
 .aboutUs img {
   width: 55%;
   margin: 1rem 0;
@@ -424,29 +377,44 @@ textarea {
   justify-content: center;
   text-align: center;
 }
-
-.item-box1 {
-  max-width: 60%;
-  margin-left: 3rem;
-  text-align: left;
-}
-.aboutTmlg {
+/*contact page styles*/
+.contact-section {
+  width: 70%;
+  height: auto;
   display: flex;
-  flex-direction: column;
-  text-align: left;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  color: black;
+  padding: 2rem;
 }
-.aboutTmlg li {
+.contact-section h1 {
+  font-size: 1.8rem;
+  justify-content: left;
+  text-align: left;
   margin-bottom: 1rem;
 }
-.aboutTmlg h1 {
+.contact-section p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.contact-infoList {
+  font-size: 1rem;
   margin: 2rem 0;
-  text-align: left;
 }
-
-.aboutTmlg h2 {
-  font-size: 1.3rem;
+.contact-infoList a {
+  color: black;
 }
-
+.contact-infoList a i {
+  font-size: large;
+}
+.contact-infoList i {
+  margin-right: 6px;
+  color: orangered;
+}
+.contact-infoList li {
+  margin-right: 4rem;
+}
 /* Registration layout */
 .registration {
   display: flex;
@@ -546,7 +514,7 @@ nav a:hover {
   top: 0%;
   right: 0%;
   height: 100vh;
-  width: 250px;
+  width: min(200px, 90%);
   z-index: 999;
   background-color: white;
   backdrop-filter: blur(10px);
@@ -555,10 +523,16 @@ nav a:hover {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  border-radius: 2rem 0 0 2rem;
 }
 
 .sidebar li {
   width: 100%;
+  margin: 0.6rem 0;
+}
+.sidebar li:hover {
+  font-weight: 600;
+  background-color: transparent;
 }
 
 .sidebar li:first-child {
@@ -567,6 +541,7 @@ nav a:hover {
 
 .sidebar a {
   width: 100%;
+  font-size: 1.2rem;
 }
 
 .menu-button {
@@ -599,6 +574,22 @@ h1 {
 a {
   color: rgb(243, 222, 193);
   margin-right: 10px;
+}
+/* Select element styling */
+select {
+  border-radius: 4px;
+  padding: 3px 1px;
+  border: 1px solid rgb(199, 199, 201);
+}
+
+/* Select on focus/hover */
+select:hover,
+select:focus {
+  border-color: #888;
+  outline: none;
+}
+input {
+  outline: none;
 }
 
 /* Utility classes for common elements */
@@ -643,10 +634,26 @@ button {
     width: 36%;
     width: 40%;
   }
+  .aboutPage-box2 ul {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+  }
 }
 @media screen and (max-width: 924px) {
   .application-form {
     width: 49%;
+  }
+  .company-name {
+    display: none;
+  }
+  .tmlg {
+    display: block;
+  }
+
+  .container {
+    margin: 4rem 0;
   }
 }
 /* Medium screens (up to 790px) */
@@ -658,16 +665,28 @@ button {
 
 /* Tablets (up to 768px) */
 @media screen and (max-width: 768px) {
+  .contact-section {
+    height: calc(100vh - 9rem);
+
+    flex-direction: column;
+  }
   nav {
     padding: 1rem 0;
     height: 9rem;
   }
+
   .company-name {
-    font-size: 1.6rem;
+    display: block;
+    font-size: 1.4rem;
+  }
+  .tmlg {
+    display: none;
   }
 
   .sidebar {
-    width: 100%;
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px);
   }
 
   .container {
@@ -740,7 +759,7 @@ button {
     font-size: 1.8rem;
   }
   .aboutUs p {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     width: 90%;
     text-align: left;
   }
@@ -816,10 +835,15 @@ button {
     margin-bottom: 2%;
   }
 
-  .vision-mission-box {
-    margin-top: 9%;
+  .aboutPage {
+    width: 75%;
+    font-size: 1.3rem;
   }
+  .contact-section {
+    height: calc(100vh - 9rem);
 
+    flex-direction: column;
+  }
   .registration {
     display: block;
   }
@@ -837,14 +861,6 @@ button {
 
   .registration-box2 {
     background-color: white;
-  }
-
-  .contact-container {
-    margin: 7%;
-  }
-
-  .contact-details {
-    display: none;
   }
 }
 
@@ -918,7 +934,27 @@ button {
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 440px) {
+  .contact-section {
+    width: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 1rem;
+    color: black;
+    padding: 2rem;
+  }
+  .contact-section h1 {
+    font-size: 1.7rem;
+  }
+  .contact-section p {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+  }
+  .contact-infoList li {
+    font-size: 1rem;
+  }
   .company-name {
     display: none;
   }
@@ -926,6 +962,21 @@ button {
   .tmlg {
     display: block;
     padding: 0;
+  }
+  .aboutPage {
+    width: 80%;
+    height: auto;
+  }
+  .aboutPage p,
+  .aboutPage h2 {
+    font-size: 1.2rem;
+  }
+
+  .aboutPage-box2 li {
+    margin: 1rem 0rem;
+  }
+  .aboutPage-box1 h1 {
+    font-size: 1.9rem;
   }
 }
 
@@ -943,5 +994,15 @@ button {
   }
   #custom-button {
     margin-top: 2.5rem;
+  }
+  .personal-details form {
+    font-size: 1.3rem;
+    padding: 1rem 1rem;
+    text-align: left;
+  }
+  .personal-details form h1 {
+    font-size: 1.4rem;
+    justify-content: left;
+    text-align: left;
   }
 }

@@ -2,36 +2,41 @@
 Micro-Lending Group{% endblock %} {% block content %}
 <div class="personal-details">
   <form method="POST" action="/submit-loan-request">
-    <h1>Personal Details</h1>
+    <h1>Personal Details</h1> 
+ 
 
+  <ul>
+    <li>
     <label for="title">Title</label>
     <select name="title" id="title">
       <option value="Mr">Mr</option>
       <option value="Mrs">Mrs</option>
       <option value="Ms">Ms</option>
     </select>
-
+</li>
+<li>
     <label for="ID"> South African ID</label>
     <input type="text" id="ID" name="ID" />
-
+</li>
+<li>
     <label for="Firstname">First Name</label>
     <input type="text" id="Firstname" name="Firstname" />
-    <br />
-
+    </li>
+<li>
     <label for="lastname">Last Name</label>
     <input type="text" id="lastname" name="lastname" />
-    <br />
-
+    </li>
+<li>
     <label for="phone-number">CellPhone number</label>
     <input type="text" id="phone-number" name="phone-number" />
-    <br />
-
+    </li>
+<li>
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" />
+    <input type="text" id="email" name="email" /></li>
     <span id="emailError" class="error"></span>
-    <br />
-
-    <label for="employmentStatus">Employment Status</label>
+ 
+  <ul>
+   <li> <label for="employmentStatus">Employment Status</label>
     <select id="employmentStatus" name="employmentStatus">
       <option value="employed">Employed</option>
       <option value="unemployed">Unemployed</option>
@@ -39,28 +44,33 @@ Micro-Lending Group{% endblock %} {% block content %}
       <option value="self-employed">Self-Employed</option>
       <option value="statePension">State Pension / Grant</option>
     </select>
-
+</li>
+<li>
     <label for="startDate">Employment Start Date</label>
     <input type="date" id="startDate" name="startDate" required />
-
+</li>
+<li>
     <label for="salaryFrequency">Salary Frequency</label>
     <select id="salaryFrequency" name="salaryFrequency">
       <option value="selectWageType">Select Wage Type</option>
       <option value="monthly">Monthly</option>
       <option value="fortnightly">Fortnightly</option>
       <option value="weekly">Weekly</option>
-    </select>
-
-    <label for="Salary">Gross Salary Before Tax</label>
+    </select></li>
+<li>
+    <label for="salary">Gross Salary Before Tax</label>
     <input type="number" id="salary" name="salary" />
-
-    <label for="net income">Net Income</label>
+</li>
+<li>
+    <label for="netincome">Net Income</label>
     <input type="number" id="netincome" name="netIncome" />
-
-    <label for="living expenses">Living Expenses</label>
+</li>
+<li>
+    <label for="livingExpense">Living Expenses</label>
     <input type="number" id="livingExpense" name="livingExpense" />
-
-    <button type="submit">Submit</button>
-  </form>
-</div>
+</li>
+<li>
+    <button type="submit">Submit</button></li></ul>
+ 
+</div> </form>
 {% endblock %}

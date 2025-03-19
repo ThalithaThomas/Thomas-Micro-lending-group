@@ -1,90 +1,40 @@
 {% extends "base.html" %} {% block title %}Contact Us - Thomas Micro-Lending
 Group{% endblock %} {% block content %}
-<div class="contact-container">
+<section class="contact-section">
+<div class="contact-info">
   <h1>Contact Us</h1>
-  <br />
+    <p>
+      Navigating financial solutions can be complex, but you're not alone.
+      Thomas Micro Lending Group offers comprehensive support through multiple
+      communication channels. Whether you prefer to chat, email, or speak
+      directly with our team, we're here to provide clear, compassionate
+      guidance tailored to your unique financial needs and goals.
+    </p>
+<ul class="contact-infoList">
   <li>
+  <p><i class="fa-solid fa-business-time"></i> Business hours : weekdays from 8:00 a.m. to 5:00 p.m.</p> 
+ 
+  </li>
+    <li>
+
+    <p><i class="fa-solid fa-envelope"></i>Thalithathomastrading@gmail.com</p>
+  </li>
+   <li>
+
+    <p>  <i class="fa-solid fa-phone"></i>+27720191566</p>
+  </li><li>
     <a href="https://wa.me/0720191566">
       <i class="fa-brands fa-whatsapp"></i>Whatsapp
-    </a>
+    </a></li>
   </li>
-  <li>
-    <a href="#">PHONE</a>
-  </li>
-  <li>+27720191566</li>
-  <br />
-  <li>
-    <a href="#">EMAIL</a>
-  </li>
-  <li>Thalithathomastrading@gmail.com</li>
-  <br />
-  <li>
-    <a href="#">BUSINESS HOURS</a>
-  </li>
-  <li>Monday to Friday 9:00am-6:00pm(GMT)</li>
+
+ </ul>
+
 </div>
 
-<div class="box">
-  <div class="contact-details">
-    <form
-      id="emailForm"
-      onsubmit="return validateEmail()"
-      action="https://formsubmit.co/Thalithaasambo@gmail.com"
-      method="POST"
-    >
-      <ul>
-        <li>
-          <input
-            type="text"
-            id="Firstname"
-            name="Firstname"
-            placeholder="Name"
-          />
-          <br />
 
-          <input
-            type="number"
-            id="number"
-            name="phone-number"
-            placeholder="Phone Number"
-          />
-          <br />
-          <input
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email Address"
-          />
-          <span id="emailError" class="error"></span>
-          <br />
-          <input
-            type="text"
-            id="message"
-            name="message"
-            placeholder="Message"
-          />
-          <br />
-
-          <button>submit</button>
-        </li>
-      </ul>
-    </form>
-  </div>
-</div>
+</div></section>
 {% endblock %} {% block extra_js %}
-<script>
-  function validateEmail() {
-    const emailInput = document.getElementById("email");
-    const emailError = document.getElementById("emailError");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailRegex.test(emailInput.value)) {
-      emailError.textContent = "Please enter a valid email address";
-      return false;
-    }
-
-    emailError.textContent = "";
-    return true;
-  }
-</script>
+ 
 {% endblock %}
