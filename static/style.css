@@ -338,7 +338,7 @@ textarea {
   justify-content: center;
   align-items: center;
   width: 60%;
-  height: auto;
+  height: calc(100vh - 13rem);
   margin: 3rem auto;
   padding: 0.6rem auto;
 }
@@ -379,8 +379,8 @@ textarea {
 }
 /*contact page styles*/
 .contact-section {
-  width: 70%;
-  height: auto;
+  width: 55%;
+  height: calc(100vh - 13rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -396,11 +396,11 @@ textarea {
 }
 .contact-section p {
   font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 .contact-infoList {
   font-size: 1rem;
-  margin: 2rem 0;
+  margin: 1rem 0;
 }
 .contact-infoList a {
   color: black;
@@ -413,7 +413,7 @@ textarea {
   color: orangered;
 }
 .contact-infoList li {
-  margin-right: 4rem;
+  margin-bottom: 1rem;
 }
 /* Registration layout */
 .registration {
@@ -555,7 +555,9 @@ html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  overflow-y: auto;
   font-family: Arial, Helvetica, sans-serif;
+  -webkit-overflow-scrolling: touch;
 }
 * {
   box-sizing: border-box;
@@ -653,7 +655,12 @@ button {
   }
 
   .container {
-    margin: 4rem 0;
+    height: calc(100vh - 13rem);
+  }
+  .application-form {
+    padding: 1rem 0 0.5rem 2rem;
+    width: 46%;
+    height: auto;
   }
 }
 /* Medium screens (up to 790px) */
@@ -690,6 +697,7 @@ button {
   }
 
   .container {
+    height: auto;
     background-image: none;
     background-color: rgb(244, 193, 152);
     display: flex;
@@ -977,6 +985,9 @@ button {
   }
   .aboutPage-box1 h1 {
     font-size: 1.9rem;
+  }
+  .contact-infoList li {
+    margin-bottom: 0.8rem;
   }
 }
 
