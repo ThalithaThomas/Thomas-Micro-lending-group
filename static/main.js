@@ -28,3 +28,4 @@ function hideSidebar() {
 function next() {
   window.location.href = "employment.html";
 }
+/*calculator*/

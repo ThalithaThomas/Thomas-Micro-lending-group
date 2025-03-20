@@ -60,33 +60,70 @@ endblock %} {% block content %}
     </form>
   </div>
 </div>
+<section class="calculator-section">
+  <h1>Personal Loan Calculator</h1>
+  <p>See how much you could borrow and what your repayments might be</p>
 
-<!-- About Us Section -->
-<div id="centered-content" class="aboutUs">
-  <ul>
-    <li class="about-us-content">
-      <h2>What Makes Us Different</h2>
-      <p>
-        Welcome to Thomas Micro-Lending Group, Step into a new era of lending
-        with us. We offer guidance, support, and pathways to success, not just
-        loans. We prioritize your unique needs, offer clear and honest terms,
-        and provide flexible repayment options.
-      </p>
-    </li>
-    <li>
-      <img
-        id="img"
-        src="{{ url_for('static', filename='images/2.jpeg') }}"
-        alt="About Us Image"
-      />
-    </li>
-    <li>
-      <a href="{{ url_for('personal') }}">
-        <button>Apply Now</button>
-      </a>
-    </li>
-  </ul>
-</div>
+  <div class="calculator-container">
+    <div class="slider-group">
+      <div class="form-group">
+        <label for="loan-amount">How much do you need?</label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="loan-amount"
+            min="1000"
+            max="8000"
+            value="5000"
+            step="100"
+          />
+          <span id="loan-amount-display">R5,000</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="loan-term">How long do you need it for?</label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="loan-term"
+            min="1"
+            max="6"
+            value="3"
+            step="1"
+          />
+          <span id="loan-term-display">3 months</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="results">
+      <div class="result-item">
+        <div class="result-label">Monthly Repayment</div>
+        <div id="monthly-payment" class="result-value">R0.00</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Total Repayment</div>
+        <div id="total-payment" class="result-value">R0.00</div>
+      </div>
+      <div class="result-item">
+        <div class="result-label">Total Interest</div>
+        <div id="total-interest" class="result-value">R0.00</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="calculator-disclaimer">
+    <p>
+      This calculator provides estimates only. The actual loan terms and
+      repayment amounts may vary.
+    </p>
+  </div>
+
+  <div class="calculator-cta">
+    <a href="{{ url_for('personal') }}" class="cta-button">Apply Now</a>
+  </div>
+</section>
 
 <!-- Application Process Section -->
 <div class="applicantion-section">
@@ -117,6 +154,33 @@ endblock %} {% block content %}
         and conditions of the loan are finalized, and funds are disbursed to the
         borrower's account.
       </p>
+    </li>
+  </ul>
+</div>
+
+<!-- About Us Section -->
+<div id="centered-content" class="aboutUs">
+  <ul>
+    <li class="about-us-content">
+      <h1>What Makes Us Different</h1>
+      <p>
+        Welcome to Thomas Micro-Lending Group, Step into a new era of lending
+        with us. We offer guidance, support, and pathways to success, not just
+        loans. We prioritize your unique needs, offer clear and honest terms,
+        and provide flexible repayment options.
+      </p>
+    </li>
+    <li>
+      <img
+        id="img"
+        src="{{ url_for('static', filename='images/2.jpeg') }}"
+        alt="About Us Image"
+      />
+    </li>
+    <li>
+      <a href="{{ url_for('personal') }}">
+        <button class="apply-button">Apply Now</button>
+      </a>
     </li>
   </ul>
 </div>

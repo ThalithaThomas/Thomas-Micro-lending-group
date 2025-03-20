@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loan Calculator Test</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .calculator-container {
+        background-color: #f5f5f5;
+        padding: 20px;
+        border-radius: 8px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      .slider-container {
+        display: flex;
+        align-items: center;
+      }
+      input[type="range"] {
+        flex-grow: 1;
+        margin-right: 10px;
+      }
+      .results {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        border-radius: 8px;
+      }
+      .result-item {
+        text-align: center;
+      }
+      .result-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #ff7700;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Loan Calculator Test</h1>
+
+    <div class="calculator-container">
+      <div class="form-group">
+        <label for="loan-amount">Loan Amount (R)</label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="loan-amount"
+            min="1000"
+            max="50000"
+            value="10000"
+            step="1000"
+          />
+          <span id="loan-amount-display">R10,000</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="loan-term">Loan Term (months)</label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="loan-term"
+            min="1"
+            max="24"
+            value="12"
+            step="1"
+          />
+          <span id="loan-term-display">12 months</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="interest-rate">Interest Rate (%)</label>
+        <div class="slider-container">
+          <input
+            type="range"
+            id="interest-rate"
+            min="5"
+            max="25"
+            value="15"
+            step="0.5"
+          />
+          <span id="interest-rate-display">15%</span>
+        </div>
+      </div>
+
+      <div class="results">
+        <div class="result-item">
+          <div>Monthly Payment</div>
+          <div id="monthly-payment" class="result-value">R0.00</div>
+        </div>
+        <div class="result-item">
+          <div>Total Repayment</div>
+          <div id="total-payment" class="result-value">R0.00</div>
+        </div>
+        <div class="result-item">
+          <div>Total Interest</div>
+          <div id="total-interest" class="result-value">R0.00</div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Get all the elements
+        const loanAmountInput = document.getElementById("loan-amount");
+        const loanTermInput = document.getElementById("loan-term");
+        const interestRateInput = document.getElementById("interest-rate");
+
+        const loanAmountDisplay = document.getElementById(
+          "loan-amount-display"
+        );
+        const loanTermDisplay = document.getElementById("loan-term-display");
+        const interestRateDisplay = document.getElementById(
+          "interest-rate-display"
+        );
+
+        const monthlyPaymentDisplay =
+          document.getElementById("monthly-payment");
+        const totalPaymentDisplay = document.getElementById("total-payment");
+        const totalInterestDisplay = document.getElementById("total-interest");
+
+        // Function to format currency
+        function formatCurrency(value) {
+          return (
+            "R" +
+            parseFloat(value)
+              .toFixed(2)
+              .replace(/\d(?=(\d{3})+\.)/g, "$&,")
+          );
+        }
+
+        // Function to calculate loan payments
+        function calculateLoan() {
+          // Get current values
+          const principal = parseFloat(loanAmountInput.value);
+          const annualRate = parseFloat(interestRateInput.value);
+          const monthlyRate = annualRate / 100 / 12;
+          const months = parseInt(loanTermInput.value);
+
+          console.log("Calculating loan with:", {
+            principal,
+            annualRate,
+            months,
+          });
+
+          // Calculate monthly payment
+          let monthlyPayment = 0;
+          if (monthlyRate !== 0) {
+            monthlyPayment =
+              (principal * monthlyRate) /
+              (1 - Math.pow(1 + monthlyRate, -months));
+          } else {
+            monthlyPayment = principal / months;
+          }
+
+          // Calculate total payment and interest
+          const totalPayment = monthlyPayment * months;
+          const totalInterest = totalPayment - principal;
+
+          // Update displays
+          loanAmountDisplay.textContent = formatCurrency(principal);
+          loanTermDisplay.textContent = months + " months";
+          interestRateDisplay.textContent = annualRate + "%";
+
+          if (isFinite(monthlyPayment) && monthlyPayment > 0) {
+            monthlyPaymentDisplay.textContent = formatCurrency(monthlyPayment);
+            totalPaymentDisplay.textContent = formatCurrency(totalPayment);
+            totalInterestDisplay.textContent = formatCurrency(totalInterest);
+          } else {
+            monthlyPaymentDisplay.textContent = "R0.00";
+            totalPaymentDisplay.textContent = "R0.00";
+            totalInterestDisplay.textContent = "R0.00";
+          }
+
+          console.log("Results:", {
+            monthlyPayment,
+            totalPayment,
+            totalInterest,
+          });
+        }
+
+        // Set up event listeners
+        loanAmountInput.addEventListener("input", calculateLoan);
+        loanTermInput.addEventListener("input", calculateLoan);
+        interestRateInput.addEventListener("input", calculateLoan);
+
+        // Initialize with default values
+        calculateLoan();
+      });
+    </script>
+  </body>
+</html>
