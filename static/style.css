@@ -117,6 +117,7 @@ textarea {
 /* Personal Details Form Styles */
 .personal-details {
   margin: 2rem auto;
+  height: calc(100vh - 13rem);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -634,13 +635,18 @@ button {
   .application-form {
     padding: 3% 4%;
     width: 36%;
-    width: 40%;
+    width: 48%;
   }
   .aboutPage-box2 ul {
     flex-direction: column;
     justify-content: center;
     align-content: center;
     margin-top: 1rem;
+  }
+  .container {
+    padding: 16%;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 }
 @media screen and (max-width: 924px) {
@@ -655,12 +661,13 @@ button {
   }
 
   .container {
-    height: calc(100vh - 13rem);
-    padding: 10%;
+    background-attachment: scroll;
+    justify-content: center;
+    align-items: center;
   }
   .application-form {
     padding: 1rem 0 0.5rem 2rem;
-    width: 46%;
+    width: 50%;
     height: auto;
   }
 }
@@ -705,6 +712,7 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 7%;
   }
 
   .application-form {
@@ -1001,6 +1009,14 @@ button {
     margin-top: 1rem;
     text-align: left;
     padding-left: 1rem;
+    font-size: 1rem;
+  }
+  .application-form h1 {
+    font-size: 1.7rem;
+  }
+
+  .application-form h4 span {
+    font-size: 0.9rem;
   }
   #custom-button {
     margin-top: 2.5rem;
