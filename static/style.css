@@ -116,8 +116,8 @@ textarea {
 
 /* Personal Details Form Styles */
 .personal-details {
-  margin: 2rem auto;
-  height: calc(100vh - 13rem);
+  margin: 3rem auto;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -241,7 +241,8 @@ textarea {
   align-items: center;
 }
 .applicantion-section h1 {
-  margin-bottom: 3rem;
+  font-size: 1.7rem;
+  padding: 0 1rem;
 }
 .application {
   width: 90%;
@@ -276,13 +277,13 @@ textarea {
   font-size: 1rem;
   padding: 1rem 0rem 0rem 2rem;
   color: rgb(243, 222, 193);
-  font-weight: 530;
+  font-weight: 550;
 }
 
 .footer p {
   color: rgb(141, 140, 140);
   padding: 1rem 0rem 0rem 2rem;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .contact {
   display: flex;
@@ -381,7 +382,8 @@ textarea {
 /*contact page styles*/
 .contact-section {
   width: 55%;
-  height: calc(100vh - 13rem);
+  height: auto;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -390,13 +392,13 @@ textarea {
   padding: 2rem;
 }
 .contact-section h1 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   justify-content: left;
   text-align: left;
   margin-bottom: 1rem;
 }
 .contact-section p {
-  font-size: 1rem;
+  font-size: 1.2rem;
   margin-bottom: 0.3rem;
 }
 .contact-infoList {
@@ -407,7 +409,8 @@ textarea {
   color: black;
 }
 .contact-infoList a i {
-  font-size: large;
+  font-size: larger;
+  font-weight: 600;
 }
 .contact-infoList i {
   margin-right: 6px;
@@ -649,6 +652,10 @@ button {
     justify-content: flex-start;
     align-items: flex-start;
   }
+  .aboutPage {
+    height: auto;
+    padding: 5rem 0;
+  }
 }
 
 @media screen and (max-width: 924px) {
@@ -669,7 +676,7 @@ button {
   }
   .application-form {
     padding: 1rem 0 0.5rem 2rem;
-    width: 50%;
+    width: 60%;
     height: auto;
   }
 }
@@ -684,204 +691,211 @@ button {
 @media screen and (max-width: 768px) {
   .contact-section {
     height: calc(100vh - 9rem);
-
     flex-direction: column;
-  }
-  nav {
-    padding: 1rem 0;
-    height: 9rem;
-  }
 
-  .company-name {
-    display: block;
-    font-size: 1.4rem;
-  }
-  .tmlg {
-    display: none;
-  }
-
-  .sidebar {
     width: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(40px);
+    height: calc(100vh - 13rem);
   }
+  .contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+}
+nav {
+  padding: 1rem 0;
+  height: 9rem;
+}
 
-  .container {
-    height: auto;
-    background-image: none;
-    background-attachment: scroll;
-    background-color: rgb(244, 193, 152);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7%;
-  }
+.company-name {
+  display: block;
+  font-size: 1.4rem;
+}
+.tmlg {
+  display: none;
+}
 
-  .application-form {
-    padding: 5rem 0;
-    background-color: transparent;
-    width: 65%;
-    height: 100%;
-  }
+.sidebar {
+  width: 80%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(40px);
+}
 
-  .application-form p {
-    width: 80%;
-    font-size: 1.7rem;
-    font-weight: 530;
-    padding: 0.6rem 0;
-  }
-  .application-form input::placeholder {
-    color: rgb(116, 114, 114);
-    font-size: 1.3rem;
-  }
-  .application-form label {
-    display: none;
-  }
-  #custom-button {
-    background-color: orangered;
-    color: white;
-    width: 11rem;
-    height: 3rem;
-    margin-top: 1.5rem;
-    font-size: 1.4rem;
-  }
+.container {
+  height: auto;
+  background-image: none;
+  background-attachment: scroll;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 7%;
+}
 
-  .application-form input,
-  .application-form textarea {
-    width: 18rem;
-    line-height: 2.7rem;
-    margin-top: 2rem;
-    text-align: left;
-    padding-left: 1rem;
-  }
-  .application-form h1 {
-    text-align: left;
-    margin: 1rem 0;
-  }
-  .application-form h4 span {
-    display: none;
-  }
-  .aboutUs {
-    background-color: transparent;
+.application-form {
+  padding: 3rem 2.5rem;
+  background-color: rgb(244, 193, 152);
+  width: 90%;
+  height: 100%;
+}
 
-    width: 100%;
-    height: auto;
-  }
-  .about-us-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-  }
-  .aboutUs h2 {
-    text-align: left;
-    margin: 2rem 0;
-    font-size: 1.8rem;
-  }
-  .aboutUs p {
-    font-size: 1.3rem;
-    width: 90%;
-    text-align: left;
-  }
+.application-form p {
+  width: 80%;
+  font-size: 1.5rem;
+  font-weight: 530;
+  padding: 0.6rem 0;
+}
+.application-form input::placeholder {
+  color: rgb(116, 114, 114);
+  font-size: 0.9rem;
+}
+.application-form label {
+  display: none;
+}
+#custom-button {
+  background-color: orangered;
+  color: white;
+  width: 9rem;
+  height: 2rem;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
 
-  .aboutUs button {
-    width: 11rem;
-    height: 3rem;
-    margin-top: 0.5rem;
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-  }
+.application-form input,
+.application-form textarea {
+  width: 100%;
+  line-height: 2.3rem;
+  margin-top: 2rem;
+  text-align: left;
+  padding-left: 1rem;
+}
+.application-form h1 {
+  text-align: left;
+  margin: 1rem 0;
+}
 
-  .aboutUs img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 1.5rem;
-    margin: 2rem auto;
+.aboutUs {
+  background-color: transparent;
 
-    border-radius: 8px;
-  }
+  width: 100%;
+  height: auto;
+}
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+}
+.aboutUs h2 {
+  text-align: left;
+  margin: 2rem 0;
+  font-size: 1.6rem;
+}
+.aboutUs p {
+  font-size: 1.2rem;
+  width: 90%;
+  text-align: left;
+}
 
-  #centered-content {
-    margin-left: 7%;
-    pad: 2%;
-  }
+.aboutUs button {
+  width: 8rem;
+  height: 2rem;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
 
-  .hideOnMobile {
-    display: none;
-  }
+.aboutUs img {
+  width: 80%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  margin: 2rem auto;
 
-  .menu-button {
-    display: block;
-    margin: auto;
-  }
-  .menu-button a {
-    margin: 0;
-    padding: 2rem 1rem 2rem 0;
-  }
-  .applicantion-section {
-    margin-left: 7%;
-  }
-  .application {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-  }
-  .application p {
-    font-size: 1.6rem;
-  }
-  .application li {
-    margin: 2rem 0;
-    padding: 1rem;
-  }
-  .footer {
-    flex-direction: column;
-    height: 7rem;
-    max-height: 7rem;
-  }
-  .footer h1 {
-    text-align: left;
-    font-size: 1rem;
-    padding: 0.5rem 0rem 0rem 2rem;
-    color: rgb(243, 222, 193);
-    font-weight: 530;
-  }
-  #footer {
-    font-size: 0.8rem;
-    color: rgb(243, 222, 193);
-    padding: 0rem 0rem 1rem 2rem;
-  }
-  .aboutUs ul {
-    display: block;
-    margin-bottom: 2%;
-  }
+  border-radius: 8px;
+}
 
-  .aboutPage {
-    width: 75%;
-    font-size: 1.3rem;
-  }
-  .contact-section {
-    height: calc(100vh - 9rem);
+.hideOnMobile {
+  display: none;
+}
 
-    flex-direction: column;
-  }
-  .registration {
-    display: block;
-  }
+.menu-button {
+  display: block;
+  margin: auto;
+}
+.menu-button a {
+  margin: 0;
+  padding: 2rem 1rem 2rem 0;
+}
 
-  .registration-box1 {
-    display: none;
-  }
+.application {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+.application p {
+  font-size: 1.3rem;
+}
+.applicantion-section h1 {
+  margin-bottom: 3rem;
+}
+.application li {
+  margin: 2rem 0;
+  padding: 1rem;
+}
+.footer {
+  flex-direction: column;
+  height: 7rem;
+  max-height: 7rem;
+}
+.footer h1 {
+  text-align: left;
+  font-size: 1rem;
+  padding: 0.5rem 0rem 0rem 2rem;
+  color: rgb(243, 222, 193);
+  font-weight: 530;
+}
+#footer {
+  font-size: 0.8rem;
+  color: rgb(243, 222, 193);
+  padding: 0rem 0rem 1rem 0rem;
+}
+.aboutUs ul {
+  display: block;
+  margin-bottom: 2%;
+}
 
-  .registration-box2 {
-    width: 50%;
-    height: 50vh;
-    background-color: rgb(248, 239, 239);
-    padding: 5%;
-  }
+.aboutPage {
+  width: 75%;
+  font-size: 1.3rem;
 
-  .registration-box2 {
-    background-color: white;
-  }
+  padding: 2rem 0;
+
+  height: auto;
+}
+.aboutPage-box1 h1 {
+  font-size: 1.9rem;
+  margin-bottom: 3rem;
+}
+.contact-section {
+  height: calc(100vh - 9rem);
+  flex-direction: column;
+}
+.registration {
+  display: block;
+}
+
+.registration-box1 {
+  display: none;
+}
+
+.registration-box2 {
+  width: 50%;
+  height: 50vh;
+  background-color: rgb(248, 239, 239);
+  padding: 5%;
+}
+
+.registration-box2 {
+  background-color: white;
 }
 
 /* Small tablets (600px - 768px) */
@@ -951,287 +965,10 @@ button {
   }
 }
 
-@media screen and (max-width: 440px) {
-  .contact-section {
-    width: 90%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 3rem 1rem;
-    color: black;
-    padding: 2rem;
-  }
-  .contact-section h1 {
-    font-size: 1.7rem;
-  }
-  .contact-section p {
-    font-size: 0.9rem;
-    margin-bottom: 0.2rem;
-  }
-  .contact-infoList li {
-    font-size: 1rem;
-  }
-  .company-name {
-    display: none;
-  }
-
-  .tmlg {
-    display: block;
-    padding: 0;
-  }
-  .aboutPage {
-    width: 80%;
-    height: auto;
-  }
-  .aboutPage p,
-  .aboutPage h2 {
-    font-size: 1.2rem;
-  }
-
-  .aboutPage-box2 li {
-    margin: 1rem 0rem;
-  }
-  .aboutPage-box1 h1 {
-    font-size: 1.9rem;
-  }
-  .contact-infoList li {
-    margin-bottom: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .application-form {
-    width: 95%;
-  }
-  .application-form input,
-  .application-form textarea {
-    width: 17rem;
-    line-height: 2.7rem;
-    margin-top: 1rem;
-    text-align: left;
-    padding-left: 1rem;
-    font-size: 1rem;
-  }
-  .application-form h1 {
-    font-size: 1.7rem;
-  }
-
-  .application-form h4 span {
-    font-size: 0.9rem;
-  }
-  #custom-button {
-    margin-top: 2.5rem;
-  }
-}
 /* Medium screens (up to 790px) */
 @media screen and (max-width: 790px) {
   nav li {
     margin-right: 0;
-  }
-}
-
-/* Tablets (up to 768px) */
-@media screen and (max-width: 768px) {
-  .contact-section {
-    height: calc(100vh - 9rem);
-
-    flex-direction: column;
-  }
-  nav {
-    padding: 1rem 0;
-    height: 9rem;
-  }
-
-  .company-name {
-    display: block;
-    font-size: 1.4rem;
-  }
-  .tmlg {
-    display: none;
-  }
-
-  .sidebar {
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(40px);
-  }
-
-  .container {
-    height: auto;
-    background-image: none;
-    background-attachment: scroll;
-    background-color: rgb(244, 193, 152);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7%;
-  }
-
-  .application-form {
-    padding: 5rem 0;
-    background-color: transparent;
-    width: 65%;
-    height: 100%;
-  }
-
-  .application-form p {
-    width: 80%;
-    font-size: 1.7rem;
-    font-weight: 530;
-    padding: 0.6rem 0;
-  }
-  .application-form input::placeholder {
-    color: rgb(116, 114, 114);
-    font-size: 1.3rem;
-  }
-  .application-form label {
-    display: none;
-  }
-  #custom-button {
-    background-color: orangered;
-    color: white;
-    width: 11rem;
-    height: 3rem;
-    margin-top: 1.5rem;
-    font-size: 1.4rem;
-  }
-
-  .application-form input,
-  .application-form textarea {
-    width: 18rem;
-    line-height: 2.7rem;
-    margin-top: 2rem;
-    text-align: left;
-    padding-left: 1rem;
-  }
-  .application-form h1 {
-    text-align: left;
-    margin: 1rem 0;
-  }
-  .application-form h4 span {
-    display: none;
-  }
-  .aboutUs {
-    background-color: transparent;
-
-    width: 100%;
-    height: auto;
-  }
-  .about-us-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-  }
-  .aboutUs h2 {
-    text-align: left;
-    margin: 2rem 0;
-    font-size: 1.8rem;
-  }
-  .aboutUs p {
-    font-size: 1.3rem;
-    width: 90%;
-    text-align: left;
-  }
-
-  .aboutUs button {
-    width: 11rem;
-    height: 3rem;
-    margin-top: 0.5rem;
-    font-size: 1.4rem;
-    margin-bottom: 2rem;
-  }
-
-  .aboutUs img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 1.5rem;
-    margin: 2rem auto;
-
-    border-radius: 8px;
-  }
-
-  #centered-content {
-    margin-left: 7%;
-    pad: 2%;
-  }
-
-  .hideOnMobile {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-    margin: auto;
-  }
-  .menu-button a {
-    margin: 0;
-    padding: 2rem 1rem 2rem 0;
-  }
-  .applicantion-section {
-    margin-left: 7%;
-  }
-  .application {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-  }
-  .application p {
-    font-size: 1.6rem;
-  }
-  .application li {
-    margin: 2rem 0;
-    padding: 1rem;
-  }
-  .footer {
-    flex-direction: column;
-    height: 7rem;
-    max-height: 7rem;
-  }
-  .footer h1 {
-    text-align: left;
-    font-size: 1rem;
-    padding: 0.5rem 0rem 0rem 2rem;
-    color: rgb(243, 222, 193);
-    font-weight: 530;
-  }
-  #footer {
-    font-size: 0.8rem;
-    color: rgb(243, 222, 193);
-    padding: 0rem 0rem 1rem 2rem;
-  }
-  .aboutUs ul {
-    display: block;
-    margin-bottom: 2%;
-  }
-
-  .aboutPage {
-    width: 75%;
-    font-size: 1.3rem;
-  }
-  .contact-section {
-    height: calc(100vh - 9rem);
-
-    flex-direction: column;
-  }
-  .registration {
-    display: block;
-  }
-
-  .registration-box1 {
-    display: none;
-  }
-
-  .registration-box2 {
-    width: 50%;
-    height: 50vh;
-    background-color: rgb(248, 239, 239);
-    padding: 5%;
-  }
-
-  .registration-box2 {
-    background-color: white;
   }
 }
 
@@ -1290,6 +1027,12 @@ button {
     background-color: #e7b0b0;
     color: rgb(82, 81, 81);
   }
+
+  .footer h2,
+  .footer p,
+  .contact {
+    padding: 1rem 0rem 0rem 1rem;
+  }
 }
 /* Small mobile (up to 425px) */
 @media screen and (max-width: 500px) {
@@ -1304,25 +1047,31 @@ button {
 
 @media screen and (max-width: 440px) {
   .contact-section {
-    width: 90%;
-    height: auto;
+    width: 96%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 3rem 1rem;
+    margin: 2rem 0rem;
     color: black;
-    padding: 2rem;
+    padding: 0 2rem;
   }
   .contact-section h1 {
-    font-size: 1.7rem;
+    font-size: 1.9rem;
+    margin-bottom: 2.5rem;
   }
   .contact-section p {
-    font-size: 0.9rem;
-    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
   }
   .contact-infoList li {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
+  .contact-infoList a i {
+    font-size: xx-large;
+    font-weight: 600;
+  }
+
   .company-name {
     display: none;
   }
@@ -1333,7 +1082,6 @@ button {
   }
   .aboutPage {
     width: 80%;
-    height: auto;
   }
   .aboutPage p,
   .aboutPage h2 {
@@ -1349,18 +1097,29 @@ button {
   .contact-infoList li {
     margin-bottom: 0.8rem;
   }
+  #custom-button {
+    width: 8rem;
+    height: 2rem;
+
+    font-size: 0.9rem;
+  }
 }
 
 @media screen and (max-width: 425px) {
+  .container {
+    padding: 3rem 1rem;
+  }
   .application-form {
     width: 95%;
+    padding: 3rem 1rem;
+    background-color: rgb(244, 193, 152);
+    width: 90%;
+    height: 100%;
   }
   .application-form input,
   .application-form textarea {
-    width: 17rem;
-    line-height: 2.7rem;
-    margin-top: 1rem;
-    text-align: left;
+    width: 100%;
+    line-height: 2.5rem;
     padding-left: 1rem;
     font-size: 1rem;
   }
@@ -1369,7 +1128,7 @@ button {
   }
 
   .application-form h4 span {
-    font-size: 0.9rem;
+    font-size: 0.86rem;
   }
   #custom-button {
     margin-top: 2.5rem;
@@ -1383,5 +1142,8 @@ button {
     font-size: 1.4rem;
     justify-content: left;
     text-align: left;
+  }
+  .footer p {
+    font-size: 0.6rem;
   }
 }
