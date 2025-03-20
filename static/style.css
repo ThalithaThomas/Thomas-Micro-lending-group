@@ -195,8 +195,21 @@ textarea {
 }
 
 /* Application Form Styles */
+.container {
+  background-image: url(./images/stressedback.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  width: 100%;
+  padding: 5% 7%;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 400px;
+}
+
 .application-form {
-  background-color: rgb(251, 209, 174);
+  background-color: #eec797e0;
   padding: 1% 4%;
   font-family: "Times New Roman", Times, serif;
   width: 35%;
@@ -343,13 +356,18 @@ textarea {
 /* layout.css - Layout containers and structural elements */
 
 /* Container Styles */
+
 .container {
   background-image: url(./images/stressedback.jpg);
-  background-attachment: sticky;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  padding: 7%;
+  background-position: center center;
+  background-attachment: scroll;
+  width: 100%;
+  padding: 5% 7%;
   margin-bottom: 40px;
+  position: relative;
+  min-height: 400px;
 }
 
 /* About Us layout */
@@ -697,6 +715,7 @@ nav a:hover {
 body,
 html {
   width: 100%;
+  max-width: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -883,11 +902,42 @@ button {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(40px);
   }
+  .container {
+    height: auto;
+    background-attachment: scroll;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+  }
+  * Create overlay for opacity control */ .container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.7
+    ); /* White overlay with 70% opacity */
+    /* OR */
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+    z-index: 1;
+  }
 
+  /* Make sure content stays on top of the overlay */
+  .container > * {
+    position: relative;
+    z-index: 2;
+  }
   .application-form {
     padding: 3rem 2.5rem;
-    background-color: #ebe8e8e0;
-    width: 90%;
+    background-color: #eec797e0;
+    width: 60%;
     height: 100%;
   }
 
@@ -1053,16 +1103,6 @@ button {
   .registration-box2 {
     background-color: white;
   }
-  .container {
-    height: auto;
-    background-image: none;
-    background-attachment: scroll;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7%;
-  }
 }
 /* Small tablets (600px - 768px) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
@@ -1097,6 +1137,9 @@ button {
     background-color: #e7b0b0;
     color: rgb(82, 81, 81);
   }
+  .application-form {
+    width: 80%;
+  }
 }
 
 /* Mobile portrait (up to 568px) */
@@ -1124,6 +1167,9 @@ button {
 @media screen and (max-width: 500px) {
   nav {
     height: 7rem;
+  }
+  .application-form {
+    width: 90%;
   }
 
   .application-form p {
@@ -1277,10 +1323,7 @@ button {
   }
   .application-form {
     width: 95%;
-    padding: 3rem 1rem;
-    background-color: rgb(244, 193, 152);
-    width: 90%;
-    height: 100%;
+    padding: 3rem 1.5rem;
   }
   .application-form input,
   .application-form textarea {
