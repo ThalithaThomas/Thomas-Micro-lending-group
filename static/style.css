@@ -656,6 +656,7 @@ button {
 
   .container {
     height: calc(100vh - 13rem);
+    padding: 10%;
   }
   .application-form {
     padding: 1rem 0 0.5rem 2rem;
@@ -699,6 +700,7 @@ button {
   .container {
     height: auto;
     background-image: none;
+    background-attachment: scroll;
     background-color: rgb(244, 193, 152);
     display: flex;
     justify-content: center;
@@ -933,10 +935,7 @@ button {
   nav {
     height: 7rem;
   }
-  .container {
-    justify-content: left;
-    padding-left: 2rem;
-  }
+
   .application-form p {
     width: 100%;
   }
