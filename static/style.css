@@ -700,204 +700,203 @@ button {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
   }
-}
-nav {
-  padding: 1rem 0;
-  height: 9rem;
-}
 
-.company-name {
-  display: block;
-  font-size: 1.4rem;
-}
-.tmlg {
-  display: none;
-}
+  nav {
+    padding: 1rem 0;
+    height: 9rem;
+  }
 
-.sidebar {
-  width: 80%;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(40px);
-}
+  .company-name {
+    display: block;
+    font-size: 1.4rem;
+  }
+  .tmlg {
+    display: none;
+  }
 
-.container {
-  height: auto;
-  background-image: none;
-  background-attachment: scroll;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 7%;
-}
+  .sidebar {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px);
+  }
 
-.application-form {
-  padding: 3rem 2.5rem;
-  background-color: rgb(244, 193, 152);
-  width: 90%;
-  height: 100%;
-}
+  .application-form {
+    padding: 3rem 2.5rem;
+    background-color: rgb(244, 193, 152);
+    width: 90%;
+    height: 100%;
+  }
 
-.application-form p {
-  width: 80%;
-  font-size: 1.5rem;
-  font-weight: 530;
-  padding: 0.6rem 0;
-}
-.application-form input::placeholder {
-  color: rgb(116, 114, 114);
-  font-size: 0.9rem;
-}
-.application-form label {
-  display: none;
-}
-#custom-button {
-  background-color: orangered;
-  color: white;
-  width: 9rem;
-  height: 2rem;
-  margin-top: 1.5rem;
-  font-size: 1.1rem;
-}
+  .application-form p {
+    width: 80%;
+    font-size: 1.5rem;
+    font-weight: 530;
+    padding: 0.6rem 0;
+  }
+  .application-form input::placeholder {
+    color: rgb(116, 114, 114);
+    font-size: 0.9rem;
+  }
+  .application-form label {
+    display: none;
+  }
+  #custom-button {
+    background-color: orangered;
+    color: white;
+    width: 9rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
 
-.application-form input,
-.application-form textarea {
-  width: 100%;
-  line-height: 2.3rem;
-  margin-top: 2rem;
-  text-align: left;
-  padding-left: 1rem;
-}
-.application-form h1 {
-  text-align: left;
-  margin: 1rem 0;
-}
+  .application-form input,
+  .application-form textarea {
+    width: 100%;
+    line-height: 2.3rem;
+    margin-top: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .application-form h1 {
+    text-align: left;
+    margin: 1rem 0;
+  }
 
-.aboutUs {
-  background-color: transparent;
+  .aboutUs {
+    background-color: transparent;
 
-  width: 100%;
-  height: auto;
-}
-.about-us-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: left;
-  align-items: left;
-}
-.aboutUs h2 {
-  text-align: left;
-  margin: 2rem 0;
-  font-size: 1.6rem;
-}
-.aboutUs p {
-  font-size: 1.2rem;
-  width: 90%;
-  text-align: left;
-}
+    width: 100%;
+    height: auto;
+  }
+  .about-us-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+  }
+  .aboutUs h2 {
+    text-align: left;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+  }
+  .aboutUs p {
+    font-size: 1.2rem;
+    width: 90%;
+    text-align: left;
+  }
 
-.aboutUs button {
-  width: 8rem;
-  height: 2rem;
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-}
+  .aboutUs button {
+    width: 8rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
 
-.aboutUs img {
-  width: 80%;
-  height: auto;
-  margin-bottom: 1.5rem;
-  margin: 2rem auto;
+  .aboutUs img {
+    width: 80%;
+    height: auto;
+    margin-bottom: 1.5rem;
+    margin: 2rem auto;
 
-  border-radius: 8px;
-}
+    border-radius: 8px;
+  }
 
-.hideOnMobile {
-  display: none;
-}
+  .hideOnMobile {
+    display: none;
+  }
 
-.menu-button {
-  display: block;
-  margin: auto;
-}
-.menu-button a {
-  margin: 0;
-  padding: 2rem 1rem 2rem 0;
-}
+  .menu-button {
+    display: block;
+    margin: auto;
+  }
+  .menu-button a {
+    margin: 0;
+    padding: 2rem 1rem 2rem 0;
+  }
 
-.application {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-}
-.application p {
-  font-size: 1.3rem;
-}
-.applicantion-section h1 {
-  margin-bottom: 3rem;
-}
-.application li {
-  margin: 2rem 0;
-  padding: 1rem;
-}
-.footer {
-  flex-direction: column;
-  height: 7rem;
-  max-height: 7rem;
-}
-.footer h1 {
-  text-align: left;
-  font-size: 1rem;
-  padding: 0.5rem 0rem 0rem 2rem;
-  color: rgb(243, 222, 193);
-  font-weight: 530;
-}
-#footer {
-  font-size: 0.8rem;
-  color: rgb(243, 222, 193);
-  padding: 0rem 0rem 1rem 0rem;
-}
-.aboutUs ul {
-  display: block;
-  margin-bottom: 2%;
-}
+  .application {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .application p {
+    font-size: 1.3rem;
+  }
+  .applicantion-section h1 {
+    margin-bottom: 3rem;
+  }
+  .application li {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+  .footer {
+    flex-direction: column;
+    height: 7rem;
+    max-height: 7rem;
+  }
+  .footer h1 {
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.5rem 0rem 0rem 2rem;
+    color: rgb(243, 222, 193);
+    font-weight: 530;
+  }
+  #footer {
+    font-size: 0.8rem;
+    color: rgb(243, 222, 193);
+    padding: 0rem 0rem 1rem 0rem;
+  }
+  .aboutUs ul {
+    display: block;
+    margin-bottom: 2%;
+  }
 
-.aboutPage {
-  width: 75%;
-  font-size: 1.3rem;
+  .aboutPage {
+    width: 75%;
+    font-size: 1.3rem;
 
-  padding: 2rem 0;
+    padding: 2rem 0;
 
-  height: auto;
-}
-.aboutPage-box1 h1 {
-  font-size: 1.9rem;
-  margin-bottom: 3rem;
-}
-.contact-section {
-  height: calc(100vh - 9rem);
-  flex-direction: column;
-}
-.registration {
-  display: block;
-}
+    height: auto;
+  }
+  .aboutPage-box1 h1 {
+    font-size: 1.9rem;
+    margin-bottom: 3rem;
+  }
+  .contact-section {
+    height: calc(100vh - 9rem);
+    flex-direction: column;
+  }
+  .registration {
+    display: block;
+  }
 
-.registration-box1 {
-  display: none;
-}
+  .registration-box1 {
+    display: none;
+  }
 
-.registration-box2 {
-  width: 50%;
-  height: 50vh;
-  background-color: rgb(248, 239, 239);
-  padding: 5%;
-}
+  .registration-box2 {
+    width: 50%;
+    height: 50vh;
+    background-color: rgb(248, 239, 239);
+    padding: 5%;
+  }
 
-.registration-box2 {
-  background-color: white;
+  .registration-box2 {
+    background-color: white;
+  }
+  .container {
+    height: auto;
+    background-image: none;
+    background-attachment: scroll;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+  }
 }
-
 /* Small tablets (600px - 768px) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
   .aboutUs ul {
