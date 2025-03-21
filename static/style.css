@@ -1,5 +1,756 @@
-/* components.css - Reusable UI components */
-/* Loan Calculator Styles */
+/* ==========================================================================
+   1. Reset & Base Styles
+   ========================================================================== */
+
+/* Basic reset */
+body,
+html {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-overflow-scrolling: touch;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+/* Typography */
+h1 {
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: #1a2a40;
+  margin-bottom: 0.5rem;
+}
+
+p,
+span {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: rgb(243, 222, 193);
+  margin-right: 10px;
+}
+
+/* Form elements */
+input,
+textarea {
+  border-radius: 8px;
+  border: none;
+  line-height: 27px;
+  outline: none;
+}
+
+select {
+  border-radius: 4px;
+  padding: 3px 1px;
+  border: 1px solid rgb(199, 199, 201);
+}
+
+select:hover,
+select:focus {
+  border-color: #888;
+  outline: none;
+}
+
+/* Button base styles */
+button {
+  border: none;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   2. Navigation
+   ========================================================================== */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  height: 6rem;
+  min-height: 6rem;
+  background-color: white;
+  box-shadow: 0 4px 6px -6px rgb(189, 182, 182);
+  padding: 1rem 2rem;
+  position: sticky;
+  z-index: 100;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: medium;
+}
+
+nav li {
+  margin-right: 10px;
+  height: 90px;
+}
+
+nav a {
+  align-items: center;
+  display: block;
+  color: #333333;
+  transition: color 0.3s ease;
+  justify-content: center;
+  text-size-adjust: large;
+  padding: 30px;
+}
+
+nav a:hover {
+  font-weight: 700;
+}
+
+nav h2 a:hover {
+  background-color: transparent;
+}
+
+.company-name {
+  font-size: x-large;
+  color: #333333;
+  transition: color 0.3s ease;
+}
+
+.tmlg {
+  display: none;
+  color: #333333;
+}
+
+/* Mobile navigation */
+.sidebar {
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  height: 100vh;
+  width: 90%;
+  max-width: 200px;
+  z-index: 999;
+  background-color: white;
+  backdrop-filter: blur(10px);
+  box-shadow: -10px 0 10px rgba(29, 27, 27, 0.1);
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-radius: 2rem 0 0 2rem;
+}
+
+.sidebar li {
+  width: 100%;
+  margin: 0.6rem 0;
+}
+
+.sidebar li:hover {
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.sidebar li:first-child {
+  text-align: end;
+}
+
+.sidebar a {
+  width: 100%;
+  font-size: 1.2rem;
+}
+
+.menu-button {
+  display: none;
+  font-size: 1.9rem;
+}
+
+/* ==========================================================================
+   3. Layout & Containers
+   ========================================================================== */
+.container {
+  background-image: url(./images/stressedback.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll;
+  width: 100%;
+  padding: 5% 7%;
+  margin-bottom: 40px;
+  position: relative;
+  min-height: 400px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.container > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer */
+.footer {
+  background-color: #1a2a40;
+  height: 6rem;
+  max-height: 6rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.footer h2 {
+  text-align: left;
+  font-size: 1rem;
+  padding: 1rem 0 0 2rem;
+  color: rgb(243, 222, 193);
+  font-weight: 550;
+}
+
+.footer p {
+  color: rgb(141, 140, 140);
+  padding: 1rem 0 0 2rem;
+  font-size: 0.7rem;
+}
+
+.contact {
+  display: flex;
+  padding: 0.5rem 0 0 2rem;
+  margin-right: 0.8rem;
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+#contact {
+  color: rgb(243, 222, 193);
+  margin-right: 0.5rem;
+  list-style: none;
+}
+
+#footer {
+  font-size: 0.8rem;
+  color: rgb(243, 222, 193);
+  padding: 0 0 1rem 0;
+}
+
+/* ==========================================================================
+   4. Components
+   ========================================================================== */
+/* Utility classes */
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid orange;
+  color: orange;
+  font-size: 16px;
+}
+
+/* Buttons */
+.apply-button {
+  display: inline-block;
+  background-color: #e05e2b;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.apply-button:hover {
+  background-color: #d04a1a;
+  transform: translateY(-2px);
+}
+
+.unique-button {
+  width: auto;
+  min-width: 160px;
+  height: 20px;
+  background-color: rgb(255, 123, 0);
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
+
+#custom-button {
+  background-color: #e05e2b;
+  color: white;
+  width: auto;
+  min-width: 7rem;
+  height: 1.8rem;
+}
+
+/* Flash messages */
+.flashed-messages {
+  font-size: small;
+  width: fit-content;
+  padding: 0;
+  margin: 10px 0;
+  border: 1px solid rgb(213, 212, 212);
+  border-radius: 8px;
+  background-color: #292929;
+  color: whitesmoke;
+  position: fixed;
+  bottom: 3%;
+  left: 33%;
+  z-index: 100000;
+}
+
+.flashed-messages ul {
+  list-style: none;
+}
+
+.flashed-messages li {
+  display: flex;
+  padding: 10px;
+  white-space: nowrap;
+}
+
+.flashed-messages li i {
+  margin-right: 8px;
+  vertical-align: middle;
+  color: #f0eded;
+  background-color: #292929;
+}
+
+.flashed-messages i {
+  margin-left: 8px;
+  vertical-align: middle;
+  line-height: 1;
+}
+
+.flashed-messages li:last-child {
+  align-self: flex-end;
+}
+
+/* ==========================================================================
+   5. Specific Sections
+   ========================================================================== */
+/* Application Form */
+.application-form {
+  background-color: #eec797e0;
+  padding: 1% 4%;
+  font-family: "Times New Roman", Times, serif;
+  width: 35%;
+  border-radius: 8px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.application-form form {
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem 0;
+}
+
+.application-form h1 {
+  padding: 0.5rem 0;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.application-form p {
+  max-width: 90%;
+}
+
+.application-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.application-form button {
+  margin-top: 20px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  width: auto;
+  min-width: 7rem;
+  height: 1.8rem;
+}
+
+.application-form input,
+.application-form textarea {
+  border-radius: 8px;
+  border: none;
+  line-height: 27px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+}
+
+.application-form input::placeholder {
+  color: transparent;
+}
+
+.application-form h4 span {
+  white-space: nowrap;
+  font-weight: normal;
+  background-color: #e05e2b;
+  color: white;
+  line-height: 2;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+/* Personal Details Form */
+.personal-details {
+  margin: 3rem auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.personal-details form {
+  width: 90%;
+  max-width: 700px;
+  font-size: 1rem;
+  padding: 3rem 4rem;
+  background-color: #efeded;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.personal-details form li {
+  margin-top: 0.9rem;
+}
+
+.personal-details form li input {
+  width: 100%;
+  height: 1.8rem;
+  background-color: #c1bebe;
+  padding: 0.5rem;
+}
+
+.personal-details form button {
+  background-color: rgb(39, 38, 38);
+  padding: 0.3rem 1.7rem;
+  color: white;
+  border-radius: 8px;
+}
+
+/* About Us Section */
+.aboutUs {
+  background-color: #ebe8e8e0;
+  background-size: contain;
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#centered-content {
+  text-align: center;
+  margin: 3.5rem auto;
+  padding: 4%;
+}
+
+.aboutUs p {
+  width: 70%;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.about-us-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutUs img {
+  width: 55%;
+  margin: 1rem 0;
+  border-radius: 8px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* About Page */
+.aboutPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  height: calc(100vh - 13rem);
+  margin: 3rem auto;
+  padding: 0.6rem auto;
+}
+
+.aboutPage p {
+  font-size: 1.2rem;
+}
+
+.aboutPage-box1 {
+  width: 97%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.aboutPage-box1 h1 {
+  margin: 1.4rem 0;
+}
+
+.aboutPage-box2 {
+  width: 100%;
+}
+
+.aboutPage-box2 h2 {
+  font-size: 1.3rem;
+}
+
+.aboutPage-box2 ul {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 1rem;
+}
+
+.aboutPage-box2 li {
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 0.7rem 1rem;
+  margin: 1rem;
+}
+
+/* Application Process Section */
+.applicantion-section {
+  margin: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.applicantion-section h1 {
+  font-size: 1.7rem;
+  padding: 0 1rem;
+  color: #333333;
+}
+
+.application {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  margin-right: 10px;
+  color: rgba(11, 10, 10, 0.834);
+}
+
+.application h2 {
+  margin-bottom: 2rem;
+}
+
+.application li {
+  border: 1px solid orange;
+  border-radius: 0.8rem;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+/* Contact Section */
+.contact-section {
+  width: 80%;
+  max-width: 900px;
+  min-height: calc(100vh - 14rem);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 3rem auto;
+  padding: 3rem;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-info {
+  width: 100%;
+}
+
+.contact-section h1 {
+  font-size: 2.2rem;
+  color: #1a2a40;
+  margin-bottom: 1.5rem;
+  position: relative;
+  text-align: left;
+}
+
+.contact-section h1:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background-color: #e05e2b;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+.contact-infoList {
+  margin: 1rem 0;
+}
+
+.contact-infoList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+
+.contact-infoList i {
+  color: #e05e2b;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.contact-infoList a {
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-infoList a:hover {
+  color: #e05e2b;
+}
+
+/* Registration and Login */
+.registration {
+  display: flex;
+  margin: 10% 0 10% 20%;
+  width: 80%;
+}
+
+.registration-box1 {
+  width: 20%;
+  height: 50vh;
+  background-color: rgb(229, 163, 110);
+  border-radius: 2px;
+  padding: 5%;
+  color: white;
+}
+
+.registration-box2 {
+  width: 50%;
+  height: 50vh;
+  background-color: rgb(234, 231, 229);
+  padding: 5%;
+}
+
+.registration input {
+  display: block;
+  width: 100%;
+  max-width: 200px;
+}
+
+.registration input,
+.registration textarea {
+  line-height: 25px;
+  border-radius: 8px;
+  border: none;
+  margin-top: 2%;
+}
+
+.registration input[type="radio"] {
+  display: inline;
+  width: auto;
+}
+
+.registration button {
+  width: auto;
+  max-width: 140px;
+  line-height: 24px;
+  border: 1px solid white;
+  background-color: rgb(229, 163, 110);
+  color: white;
+  border-radius: 15px;
+  margin-top: 20px;
+}
+
+.log-in {
+  display: block;
+  margin: 10% 10% 10% 20%;
+  background-color: rgb(221, 163, 101);
+  padding: 6%;
+  border-radius: 4px;
+  padding-left: 25%;
+  width: 80%;
+}
+
+.log-in p {
+  font-size: 2em;
+  color: black;
+}
+
+.log-in button {
+  margin-top: 3%;
+  width: auto;
+  max-width: 100px;
+  line-height: 20px;
+  border-radius: 15px;
+  background-color: orangered;
+  color: white;
+  border: none;
+}
+
+.log-in input,
+.log-in textarea {
+  margin-top: 2%;
+  width: 100%;
+  max-width: 300px;
+  line-height: 25px;
+  border: none;
+  border-bottom: 1px solid grey;
+  border-radius: 8px;
+}
+
+.error {
+  color: red;
+}
+
+/* Loan Calculator */
 .calculator-section {
   max-width: 800px;
   margin: 4rem auto;
@@ -7,6 +758,7 @@
   background-color: #ebe8e8e0;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 90%;
 }
 
 .calculator-section h1 {
@@ -56,6 +808,7 @@
   border-radius: 5px;
   appearance: none;
   margin-right: 1rem;
+  width: 100%;
 }
 
 .slider-container input[type="range"]::-webkit-slider-thumb {
@@ -124,7 +877,277 @@
   background-color: #d04a1a;
 }
 
-@media (max-width: 768px) {
+/* ==========================================================================
+   6. Media Queries
+   ========================================================================== */
+/* Large screens (up to 1024px) */
+@media screen and (max-width: 1024px) {
+  .application-form {
+    padding: 3% 4%;
+    width: 48%;
+  }
+
+  .aboutPage-box2 ul {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 1rem;
+  }
+
+  .container {
+    padding: 16% 7%;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .aboutPage {
+    height: auto;
+    padding: 5rem 0;
+  }
+}
+
+/* Medium-large screens (up to 924px) */
+@media screen and (max-width: 924px) {
+  .application-form {
+    width: 60%;
+  }
+
+  .company-name {
+    display: none;
+  }
+
+  .tmlg {
+    display: block;
+  }
+
+  .container {
+    background-attachment: scroll;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .application-form {
+    padding: 1rem 2rem 0.5rem 2rem;
+    height: auto;
+  }
+}
+
+/* Medium screens (up to 790px) */
+@media screen and (max-width: 790px) {
+  nav li {
+    margin-right: 0;
+  }
+}
+
+/* Tablets (up to 768px) */
+@media screen and (max-width: 768px) {
+  .contact-section {
+    width: 80%;
+    flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 13rem);
+  }
+
+  .contact-section p {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  nav {
+    padding: 1rem 0;
+    height: 9rem;
+  }
+
+  .company-name {
+    display: block;
+    font-size: 1.4rem;
+  }
+
+  .tmlg {
+    display: none;
+  }
+
+  .sidebar {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(40px);
+  }
+
+  .container {
+    height: auto;
+    background-attachment: scroll;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 7%;
+  }
+
+  .application-form {
+    padding: 3rem 2.5rem;
+    background-color: #eec797e0;
+    width: 80%;
+    height: auto;
+  }
+
+  .application-form p {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 530;
+    padding: 0.6rem 0;
+  }
+
+  .application-form input::placeholder {
+    color: rgb(116, 114, 114);
+    font-size: 0.9rem;
+  }
+
+  .application-form label {
+    display: none;
+  }
+
+  #custom-button {
+    background-color: #e05e2b;
+    color: white;
+    width: auto;
+    min-width: 9rem;
+    height: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .application-form input,
+  .application-form textarea {
+    width: 100%;
+    line-height: 2.3rem;
+    margin-top: 2rem;
+    text-align: left;
+    padding-left: 1rem;
+  }
+
+  .application-form h1 {
+    text-align: left;
+    margin: 1rem 0;
+  }
+
+  .aboutUs {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    box-shadow: none;
+  }
+
+  .aboutUs h2 {
+    text-align: left;
+    margin: 2rem 0;
+    font-size: 1.6rem;
+  }
+
+  .aboutUs p {
+    font-size: 1.2rem;
+    width: 90%;
+    text-align: left;
+  }
+
+  .aboutUs button {
+    width: auto;
+    min-width: 8rem;
+    height: 2rem;
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .aboutUs img {
+    width: 80%;
+    height: auto;
+    margin: 2rem auto;
+    border-radius: 8px;
+  }
+
+  .hideOnMobile {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+    margin: auto;
+  }
+
+  .menu-button a {
+    margin: 0;
+    padding: 2rem 1rem 2rem 0;
+  }
+
+  .application {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .application p {
+    font-size: 1.3rem;
+  }
+
+  .applicantion-section h1 {
+    margin-bottom: 3rem;
+  }
+
+  .application li {
+    margin: 2rem 0;
+    padding: 1rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: 7rem;
+    max-height: 7rem;
+  }
+
+  .footer h1 {
+    text-align: left;
+    font-size: 1rem;
+    padding: 0.5rem 0 0 2rem;
+    color: #e05e2b;
+    font-weight: 530;
+  }
+
+  .aboutUs ul {
+    display: block;
+    margin-bottom: 2%;
+  }
+
+  .aboutPage {
+    width: 75%;
+    font-size: 1.3rem;
+    padding: 2rem 0;
+    height: auto;
+  }
+
+  .aboutPage-box1 h1 {
+    font-size: 1.9rem;
+    margin-bottom: 3rem;
+  }
+
+  .registration {
+    display: block;
+    width: 90%;
+    margin: 10% auto;
+  }
+
+  .registration-box1 {
+    display: none;
+  }
+
+  .registration-box2 {
+    width: 90%;
+    height: auto;
+    min-height: 50vh;
+    background-color: white;
+    padding: 5%;
+    margin: 0 auto;
+  }
+
   .results {
     flex-direction: column;
   }
@@ -140,1047 +1163,7 @@
   .calculator-section {
     padding: 1.5rem;
     margin: 2rem auto;
-  }
-}
-/* Flashed Messages Component */
-.flashed-messages {
-  font-size: small;
-  width: fit-content;
-  padding: 0%;
-  margin: 10px 0;
-  border: 1px solid rgb(213, 212, 212);
-  border-radius: 8px;
-  background-color: #292929;
-  color: whitesmoke;
-  position: fixed;
-  bottom: 3%;
-  left: 33%;
-  z-index: 100000;
-}
-
-.flashed-messages ul {
-  list-style: none;
-}
-
-.flashed-messages li {
-  display: flex;
-  padding: 10px;
-  white-space: nowrap;
-}
-
-.flashed-messages li i {
-  margin-right: 8px;
-  vertical-align: middle;
-  color: #f0eded;
-  background-color: #292929;
-}
-
-.flashed-messages i {
-  margin-left: 8px;
-  vertical-align: middle;
-  line-height: 1;
-}
-
-.flashed-messages li:last-child {
-  align-self: flex-end;
-}
-/* forms.css - Styles for all forms and inputs */
-
-/* Common form styles */
-input,
-textarea {
-  border-radius: 8px;
-  border: none;
-  line-height: 27px;
-}
-
-/* Application Form Styles */
-.container {
-  background-image: url(./images/stressedback.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: scroll;
-  width: 100%;
-  padding: 5% 7%;
-  margin-bottom: 40px;
-  position: relative;
-  min-height: 400px;
-}
-
-.application-form {
-  background-color: #eec797e0;
-  padding: 1% 4%;
-  font-family: "Times New Roman", Times, serif;
-  width: 35%;
-  height: 50%;
-  border-radius: 8px;
-  box-sizing: border-box;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.application-form form {
-  max-width: 100%;
-  margin: 2rem 0;
-}
-
-.application-form h1 {
-  padding: 0.5rem 0;
-  white-space: nowrap;
-  text-align: left;
-}
-
-.application-form p {
-  max-width: 90%;
-}
-
-.application-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.application-form button {
-  margin-top: 20px;
-  border-radius: 8px;
-  border: none;
-  color: white;
-  width: 7rem;
-  height: 1.8rem;
-}
-
-.application-form input,
-.application-form textarea {
-  border-radius: 8px;
-  border: none;
-  line-height: 27px;
-  justify-content: center;
-  text-align: center;
-}
-.application-form input::placeholder {
-  color: transparent;
-}
-.application-form h4 span {
-  white-space: nowrap;
-  font-weight: normal;
-  background-color: #e05e2b;
-  color: white;
-  line-height: 2;
-  padding: 6px;
-  border-radius: 4px;
-}
-
-/* Personal Details Form Styles */
-.personal-details {
-  margin: 3rem auto;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.personal-details form {
-  width: min(700px, 90%);
-  font-size: 1rem;
-  padding: 3rem 4rem;
-  background-color: #efeded;
-  border-radius: 8px;
-
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-.personal-details form li {
-  margin-top: 0.9rem;
-}
-.personal-details form li input {
-  width: 100%;
-  height: 1.8rem;
-  background-color: #c1bebe;
-  padding: 0.5rem;
-}
-.personal-details form button {
-  background-color: rgb(39, 38, 38);
-  padding: 0.3rem 1.7rem;
-  color: white;
-  border-radius: 8px;
-}
-/* Registration Styles */
-.registration input {
-  display: block;
-}
-
-.registration input,
-.registration textarea {
-  width: 200px;
-  line-height: 25px;
-  border-radius: 8px;
-  border: none;
-  margin-top: 2%;
-}
-
-.registration input[type="radio"] {
-  display: inline;
-}
-
-.registration button {
-  width: 140px;
-  line-height: 24px;
-  border: 1px solid white;
-  background-color: rgb(229, 163, 110);
-  color: white;
-  border-radius: 15px;
-  margin-top: 20px;
-}
-
-/* Login Styles */
-.log-in button {
-  margin-top: 3%;
-  width: 100px;
-  line-height: 20px;
-  border-radius: 15px;
-  background-color: orangered;
-  color: white;
-  border: none;
-}
-
-.log-in input,
-.log-in textarea {
-  margin-top: 2%;
-  width: 300px;
-  line-height: 25px;
-  border: none;
-  border-bottom: 1px solid grey;
-  border-radius: 8px;
-}
-.error {
-  color: red;
-}
-/* layout.css - Layout containers and structural elements */
-
-/* Container Styles */
-
-.container {
-  background-image: url(./images/stressedback.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  background-attachment: scroll;
-  width: 100%;
-  padding: 5% 7%;
-  margin-bottom: 40px;
-  position: relative;
-  min-height: 400px;
-}
-
-/* About Us layout */
-.aboutUs {
-  background-color: #ebe8e8e0;
-  background-size: contain;
-  width: 70%;
-  height: 10%;
-  justify-content: center;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-#centered-content {
-  text-align: center;
-  margin: 3.5rem auto;
-  padding: 4%;
-}
-
-/* Application Process Styles */
-.applicantion-section {
-  margin: 4rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.applicantion-section h1 {
-  font-size: 1.7rem;
-  padding: 0 1rem;
-  color: #333333;
-}
-.application {
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2rem 0;
-  margin-right: 10px;
-  color: rgba(11, 10, 10, 0.834);
-}
-.application h2 {
-  margin-bottom: 2rem;
-}
-.application li {
-  border: 1px solid orange;
-  border-radius: 0.8rem;
-  margin: 1rem;
-  padding: 1rem;
-}
-
-/* footer section layout */
-.footer {
-  background-color: #1a2a40;
-  height: 6rem;
-  max-height: 6rem;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.footer h2 {
-  text-align: left;
-  font-size: 1rem;
-  padding: 1rem 0rem 0rem 2rem;
-  color: rgb(243, 222, 193);
-  font-weight: 550;
-}
-
-.footer p {
-  color: rgb(141, 140, 140);
-  padding: 1rem 0rem 0rem 2rem;
-  font-size: 0.7rem;
-}
-.contact {
-  display: flex;
-  padding: 0.5rem 0rem 0rem 2rem;
-  margin-right: 0.8rem;
-  font-size: 1rem;
-
-  white-space: nowrap;
-}
-
-#contact {
-  color: rgb(243, 222, 193);
-  margin-right: 0.5rem;
-  list-style: none;
-}
-
-/* Contact Container Styles */
-.body {
-  background-image: url(./images/happyw.webp);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.vision {
-  max-width: 700px;
-  justify-content: center;
-  text-align: center;
-  padding: 1%;
-  margin-left: 20%;
-  border-radius: 8px;
-}
-
-/* About us content layout */
-.aboutUs {
-  width: 60%;
-  border-radius: 8px;
-}
-.aboutUs p {
-  width: 70%;
-  margin-top: 0.5rem;
-  text-align: center;
-}
-
-.about-us-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.aboutPage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-  height: calc(100vh - 13rem);
-  margin: 3rem auto;
-  padding: 0.6rem auto;
-}
-.aboutPage p {
-  font-size: 1.2rem;
-}
-.aboutPage-box1 {
-  width: (600px, 97%);
-  text-align: center;
-}
-.aboutPage-box1 h1 {
-  margin: 1.4rem 0;
-}
-.aboutPage-box2 {
-  width: 100%;
-}
-.aboutPage-box2 h2 {
-  font-size: 1.3rem;
-}
-.aboutPage-box2 ul {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  margin-top: 1rem;
-}
-.aboutPage-box2 li {
-  border: 1px solid orange;
-  border-radius: 10px;
-  padding: 0.7rem 1rem;
-  margin: 1rem;
-}
-.aboutUs img {
-  width: 55%;
-  margin: 1rem 0;
-  border-radius: 8px;
-  justify-content: center;
-  text-align: center;
-}
-/*contact page styles*/
-.contact-section {
-  width: 55%;
-  height: auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 3rem auto;
-  color: black;
-  padding: 2rem;
-}
-.contact-section h1 {
-  font-size: 1.9rem;
-  justify-content: left;
-  text-align: left;
-  margin-bottom: 1rem;
-}
-.contact-section p {
-  font-size: 1.2rem;
-  margin-bottom: 0.3rem;
-}
-.contact-infoList {
-  font-size: 1rem;
-  margin: 1rem 0;
-}
-.contact-infoList a {
-  color: black;
-}
-.contact-infoList a i {
-  font-size: larger;
-  font-weight: 600;
-}
-.contact-infoList i {
-  margin-right: 6px;
-  color: orangered;
-}
-.contact-infoList li {
-  margin-bottom: 1rem;
-}
-/* Registration layout */
-.registration {
-  display: flex;
-  margin: 10% 0 10% 20%;
-}
-
-.registration-box1 {
-  width: 20%;
-  height: 50vh;
-  background-color: rgb(229, 163, 110);
-  border-radius: 2px;
-  padding: 5%;
-  color: white;
-}
-
-.registration-box2 {
-  width: 50%;
-  height: 50vh;
-  background-color: rgb(234, 231, 229);
-  padding: 5%;
-}
-
-/* Login layout */
-.log-in {
-  display: block;
-  margin: 10% 10% 10% 20%;
-  background-color: rgb(221, 163, 101);
-  padding: 6%;
-  border-radius: 4px;
-  padding-left: 25%;
-}
-
-.log-in p {
-  font-size: 2em;
-  color: black;
-}
-/* navigation.css - All navigation related styles */
-
-/* Main Navigation */
-nav {
-  width: 100%;
-  max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  top: 0;
-  height: 6rem;
-  min-height: 6rem;
-  background-color: white;
-  box-shadow: 0 4px 6px -6px rgb(189, 182, 182);
-  padding: 1rem 2rem;
-  position: sticky;
-  z-index: 100;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: medium;
-}
-
-nav li {
-  margin-right: 10px;
-  height: 90px;
-}
-
-nav a {
-  align-items: center;
-  display: block;
-  color: #333333;
-  transition: color 0.3s ease;
-  justify-content: center;
-  text-size-adjust: large;
-  padding: 30px;
-}
-
-nav h2 a:hover {
-  background-color: transparent;
-}
-
-nav a:hover {
-  font-weight: 700;
-}
-
-.company-name {
-  font-size: x-large;
-  color: #333333;
-  transition: color 0.3s ease;
-}
-
-.tmlg {
-  display: none;
-  color: #333333;
-}
-
-/* Sidebar for mobile navigation */
-.sidebar {
-  position: fixed;
-  top: 0%;
-  right: 0%;
-  height: 100vh;
-  width: min(200px, 90%);
-  z-index: 999;
-  background-color: white;
-  backdrop-filter: blur(10px);
-  box-shadow: -10px 0 10px rgb(29, 27, 27, 0.1);
-  display: none;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  border-radius: 2rem 0 0 2rem;
-}
-
-.sidebar li {
-  width: 100%;
-  margin: 0.6rem 0;
-}
-.sidebar li:hover {
-  font-weight: 600;
-  background-color: transparent;
-}
-
-.sidebar li:first-child {
-  text-align: end;
-}
-
-.sidebar a {
-  width: 100%;
-  font-size: 1.2rem;
-}
-
-.menu-button {
-  display: none;
-  font-size: 1.9rem;
-}
-/* reset.css - Basic reset and common elements */
-body,
-html {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-overflow-scrolling: touch;
-}
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-}
-
-/* Basic Typography */
-h1 {
-  justify-content: center;
-  text-align: center;
-  font-size: 2rem;
-  color: #1a2a40;
-  margin-bottom: 0.5rem;
-}
-p,
-span {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333333; /* Dark charcoal for readability */
-  margin-bottom: 1rem;
-}
-a {
-  color: rgb(243, 222, 193);
-  margin-right: 10px;
-}
-/* Select element styling */
-select {
-  border-radius: 4px;
-  padding: 3px 1px;
-  border: 1px solid rgb(199, 199, 201);
-}
-
-/* Select on focus/hover */
-select:hover,
-select:focus {
-  border-color: #888;
-  outline: none;
-}
-input {
-  outline: none;
-}
-
-/* Utility classes for common elements */
-.circle {
-  width: 40px;
-  height: 40px;
-  border-radius: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid orange;
-  color: orange;
-  font-size: 16px;
-}
-
-/* Button base styles */
-button {
-  border: none;
-  cursor: pointer;
-}
-.apply-button {
-  display: inline-block;
-  background-color: #e05e2b; /* Burnt orange */
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.75rem 2rem;
-  border: none;
-  border-radius: 50px; /* Rounded corners like Capfin */
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-align: center;
-}
-
-.unique-button {
-  width: 160px;
-  height: 20px;
-  background-color: rgb(255, 123, 0);
-  color: white;
-  border-radius: 20px;
-  border: none;
-}
-
-#custom-button {
-  background-color: #e05e2b;
-  color: white;
-}
-/* responsive.css - Media queries for responsive design */
-
-/* Large screens (up to 1024px) */
-
-@media screen and (max-width: 1024px) {
-  .application-form {
-    padding: 3% 4%;
-    width: 36%;
-    width: 48%;
-  }
-
-  .aboutPage-box2 ul {
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    margin-top: 1rem;
-  }
-  .container {
-    padding: 16%;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-  .aboutPage {
-    height: auto;
-    padding: 5rem 0;
-  }
-}
-
-@media screen and (max-width: 924px) {
-  .application-form {
-    width: 49%;
-  }
-  .company-name {
-    display: none;
-  }
-  .tmlg {
-    display: block;
-  }
-
-  .container {
-    background-attachment: scroll;
-    justify-content: center;
-    align-items: center;
-  }
-  .application-form {
-    padding: 1rem 0 0.5rem 2rem;
-    width: 60%;
-    height: auto;
-  }
-}
-/* Medium screens (up to 790px) */
-@media screen and (max-width: 790px) {
-  nav li {
-    margin-right: 0;
-  }
-}
-
-/* Tablets (up to 768px) */
-@media screen and (max-width: 768px) {
-  .contact-section {
-    height: calc(100vh - 9rem);
-    flex-direction: column;
-
-    width: 80%;
-    height: calc(100vh - 13rem);
-  }
-  .contact-section p {
-    font-size: 1.1rem;
-    margin-bottom: 0.3rem;
-  }
-
-  nav {
-    padding: 1rem 0;
-    height: 9rem;
-  }
-
-  .company-name {
-    display: block;
-    font-size: 1.4rem;
-  }
-  .tmlg {
-    display: none;
-  }
-
-  .sidebar {
-    width: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(40px);
-  }
-  .container {
-    height: auto;
-    background-attachment: scroll;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 7%;
-  }
-  * Create overlay for opacity control */ .container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.7
-    ); /* White overlay with 70% opacity */
-    /* OR */
-    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
-    z-index: 1;
-  }
-
-  /* Make sure content stays on top of the overlay */
-  .container > * {
-    position: relative;
-    z-index: 2;
-  }
-  .application-form {
-    padding: 3rem 2.5rem;
-    background-color: #eec797e0;
-    width: 60%;
-    height: 100%;
-  }
-
-  .application-form p {
-    width: 80%;
-    font-size: 1.5rem;
-    font-weight: 530;
-    padding: 0.6rem 0;
-  }
-  .application-form input::placeholder {
-    color: rgb(116, 114, 114);
-    font-size: 0.9rem;
-  }
-  .application-form label {
-    display: none;
-  }
-  .application-form h4 span {
-    background-color: #e05e2b;
-  }
-  #custom-button {
-    background-color: #e05e2b;
-    color: white;
-    width: 9rem;
-    height: 2rem;
-    margin-top: 1.5rem;
-    font-size: 1.1rem;
-  }
-
-  .application-form input,
-  .application-form textarea {
-    width: 100%;
-    line-height: 2.3rem;
-    margin-top: 2rem;
-    text-align: left;
-    padding-left: 1rem;
-  }
-  .application-form h1 {
-    text-align: left;
-    margin: 1rem 0;
-  }
-
-  .aboutUs {
-    background-color: transparent;
-
-    width: 100%;
-    height: auto;
-  }
-  .about-us-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    align-items: left;
-  }
-  .aboutUs h2 {
-    text-align: left;
-    margin: 2rem 0;
-    font-size: 1.6rem;
-  }
-  .aboutUs p {
-    font-size: 1.2rem;
     width: 90%;
-    text-align: left;
-  }
-
-  .aboutUs button {
-    width: 8rem;
-    height: 2rem;
-    margin-top: 0.5rem;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .aboutUs img {
-    width: 80%;
-    height: auto;
-    margin-bottom: 1.5rem;
-    margin: 2rem auto;
-
-    border-radius: 8px;
-  }
-
-  .hideOnMobile {
-    display: none;
-  }
-
-  .menu-button {
-    display: block;
-    margin: auto;
-  }
-  .menu-button a {
-    margin: 0;
-    padding: 2rem 1rem 2rem 0;
-  }
-
-  .application {
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-  }
-  .application p {
-    font-size: 1.3rem;
-  }
-  .applicantion-section h1 {
-    margin-bottom: 3rem;
-  }
-  .application li {
-    margin: 2rem 0;
-    padding: 1rem;
-  }
-  .footer {
-    flex-direction: column;
-    height: 7rem;
-    max-height: 7rem;
-  }
-  .footer h1 {
-    text-align: left;
-    font-size: 1rem;
-    padding: 0.5rem 0rem 0rem 2rem;
-    color: #e05e2b;
-    font-weight: 530;
-  }
-  #footer {
-    font-size: 0.8rem;
-    color: rgb(243, 222, 193);
-    padding: 0rem 0rem 1rem 0rem;
-  }
-  .aboutUs ul {
-    display: block;
-    margin-bottom: 2%;
-  }
-
-  .aboutPage {
-    width: 75%;
-    font-size: 1.3rem;
-
-    padding: 2rem 0;
-
-    height: auto;
-  }
-  .aboutPage-box1 h1 {
-    font-size: 1.9rem;
-    margin-bottom: 3rem;
-  }
-  .contact-section {
-    height: calc(100vh - 9rem);
-    flex-direction: column;
-  }
-  .registration {
-    display: block;
-  }
-
-  .registration-box1 {
-    display: none;
-  }
-
-  .registration-box2 {
-    width: 50%;
-    height: 50vh;
-    background-color: rgb(248, 239, 239);
-    padding: 5%;
-  }
-
-  .registration-box2 {
-    background-color: white;
-  }
-}
-/* Small tablets (600px - 768px) */
-@media only screen and (min-width: 600px) and (max-width: 768px) {
-  .aboutUs ul {
-    display: block;
-    margin-bottom: 2%;
-  }
-
-  .vision-mission-box {
-    margin-top: 9%;
-    justify-content: center;
-  }
-}
-
-/* Mobile landscape (up to 600px) */
-@media screen and (max-width: 600px) {
-  .flashed-messages {
-    width: 76%;
-    border: 1px solid rgb(213, 212, 212);
-    border-radius: 12px;
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-    font-size: smaller;
-    left: 7%;
-  }
-
-  .flashed-messages li {
-    white-space: normal;
-  }
-
-  .flashed-messages li i {
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-  }
-  .application-form {
-    width: 80%;
-  }
-}
-
-/* Mobile portrait (up to 568px) */
-@media screen and (max-width: 568px) {
-  .flashed-messages {
-    width: 76%;
-    border: 1px solid rgb(213, 212, 212);
-    border-radius: 12px;
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-    font-size: smaller;
-    left: 7%;
-  }
-
-  .flashed-messages li {
-    white-space: normal;
-  }
-
-  .flashed-messages li i {
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-  }
-}
-/* Small mobile (up to 425px) */
-@media screen and (max-width: 500px) {
-  nav {
-    height: 7rem;
-  }
-  .application-form {
-    width: 90%;
-  }
-
-  .application-form p {
-    width: 100%;
-  }
-}
-
-/* Medium screens (up to 790px) */
-@media screen and (max-width: 790px) {
-  nav li {
-    margin-right: 0;
   }
 }
 
@@ -1217,39 +1200,32 @@ button {
     background-color: #e7b0b0;
     color: rgb(82, 81, 81);
   }
+
+  .application-form {
+    width: 90%;
+  }
 }
 
 /* Mobile portrait (up to 568px) */
 @media screen and (max-width: 568px) {
-  .flashed-messages {
-    width: 76%;
-    border: 1px solid rgb(213, 212, 212);
-    border-radius: 12px;
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-    font-size: smaller;
-    left: 7%;
-  }
-
-  .flashed-messages li {
-    white-space: normal;
-  }
-
-  .flashed-messages li i {
-    background-color: #e7b0b0;
-    color: rgb(82, 81, 81);
-  }
-
   .footer h2,
   .footer p,
   .contact {
-    padding: 1rem 0rem 0rem 1rem;
+    padding: 1rem 0 0 1rem;
+  }
+
+  .aboutUs {
+    width: 90%;
   }
 }
-/* Small mobile (up to 425px) */
+/* Small mobile (up to 500px) */
 @media screen and (max-width: 500px) {
   nav {
     height: 7rem;
+  }
+
+  .application-form {
+    width: 95%;
   }
 
   .application-form p {
@@ -1260,27 +1236,26 @@ button {
 @media screen and (max-width: 440px) {
   .contact-section {
     width: 96%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2rem 0rem;
-    color: black;
-    padding: 0 2rem;
+    margin: 2rem 0;
+    padding: 1.5rem;
   }
+
   .contact-section h1 {
     font-size: 1.9rem;
     margin-bottom: 2.5rem;
   }
+
   .contact-section p {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
+
   .contact-infoList li {
     font-size: 1.2rem;
   }
+
   .contact-infoList a i {
-    font-size: xx-large;
+    font-size: 1.6rem;
     font-weight: 600;
   }
 
@@ -1292,28 +1267,42 @@ button {
     display: block;
     padding: 0;
   }
+
   .aboutPage {
-    width: 80%;
+    width: 90%;
   }
+
   .aboutPage p,
   .aboutPage h2 {
     font-size: 1.2rem;
   }
 
   .aboutPage-box2 li {
-    margin: 1rem 0rem;
+    margin: 1rem 0;
   }
+
   .aboutPage-box1 h1 {
     font-size: 1.9rem;
   }
+
   .contact-infoList li {
     margin-bottom: 0.8rem;
   }
-  #custom-button {
-    width: 8rem;
-    height: 2rem;
 
+  #custom-button {
+    width: auto;
+    min-width: 8rem;
+    height: 2rem;
     font-size: 0.9rem;
+  }
+
+  .calculator-section {
+    width: 95%;
+    padding: 1.5rem;
+  }
+
+  .slider-container span {
+    min-width: 70px;
   }
 }
 
@@ -1321,10 +1310,12 @@ button {
   .container {
     padding: 3rem 1rem;
   }
+
   .application-form {
     width: 95%;
     padding: 3rem 1.5rem;
   }
+
   .application-form input,
   .application-form textarea {
     width: 100%;
@@ -1332,6 +1323,7 @@ button {
     padding-left: 1rem;
     font-size: 1rem;
   }
+
   .application-form h1 {
     font-size: 1.7rem;
   }
@@ -1339,120 +1331,40 @@ button {
   .application-form h4 span {
     font-size: 0.86rem;
   }
+
   #custom-button {
     margin-top: 2.5rem;
   }
+
   .personal-details form {
     font-size: 1.3rem;
-    padding: 1rem 1rem;
+    padding: 1rem;
     text-align: left;
+    width: 95%;
   }
+
   .personal-details form h1 {
     font-size: 1.4rem;
     justify-content: left;
     text-align: left;
   }
+
   .footer p {
     font-size: 0.6rem;
   }
-}
-/* Contact page styles */
-.contact-section {
-  width: 80%;
-  max-width: 900px;
-  min-height: calc(100vh - 14rem); /* Account for header and footer */
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 3rem auto;
-  padding: 3rem;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-}
 
-.contact-info {
-  width: 100%;
-}
-
-.contact-section h1 {
-  font-size: 2.2rem;
-  color: #1a2a40;
-  margin-bottom: 1.5rem;
-  position: relative;
-}
-
-.contact-section h1:after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background-color: #e05e2b;
-}
-
-.contact-intro {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 2rem;
-  max-width: 90%;
-}
-
-.contact-infoList {
-  margin: 1rem 0;
-}
-
-.contact-infoList li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0rem;
-  font-size: 1.1rem;
-}
-
-.contact-infoList i {
-  color: #e05e2b;
-  font-size: 1.4rem;
-  margin-right: 1rem;
-  width: 24px;
-  text-align: center;
-}
-
-.contact-infoList a {
-  display: flex;
-  align-items: center;
-  color: #333;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.contact-infoList a:hover {
-  color: #e05e2b;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .contact-section {
-    width: 90%;
+  .log-in {
+    width: 95%;
+    margin: 2rem auto;
     padding: 2rem;
   }
 
-  .contact-intro {
-    max-width: 100%;
+  .registration {
+    width: 95%;
+    margin: 2rem auto;
   }
 
-  .contact-section h1 {
-    font-size: 1.8rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-section {
-    padding: 1.5rem;
-  }
-
-  .contact-infoList li {
-    font-size: 1rem;
+  .registration-box2 {
+    width: 100%;
   }
 }

@@ -5,7 +5,7 @@ endblock %} {% block content %}
   <div class="application-form">
     <form
       id="emailForm"
-      onsubmit="return validateEmail()"
+      onsubmit="return validateForm()"
       action="https://formsubmit.co/Thalithaasambo@gmail.com"
       method="POST"
     >
@@ -24,7 +24,9 @@ endblock %} {% block content %}
             id="Firstname"
             name="Firstname"
             placeholder="First Name"
+            required
           />
+          <span id="firstnameError" class="error"></span>
         </li>
 
         <li>
@@ -34,7 +36,9 @@ endblock %} {% block content %}
             id="lastname"
             name="lastname"
             placeholder="Last Name"
+            required
           />
+          <span id="lastnameError" class="error"></span>
         </li>
 
         <li>
@@ -44,12 +48,20 @@ endblock %} {% block content %}
             id="phone-number"
             name="phone-number"
             placeholder="Phone"
+            required
           />
+          <span id="phoneError" class="error"></span>
         </li>
 
         <li>
           <label for="email">Email</label>
-          <input type="text" id="email" name="email" placeholder="Email" />
+          <input
+            type="text"
+            id="email"
+            name="email"
+            placeholder="Email"
+            required
+          />
           <span id="emailError" class="error"></span>
         </li>
 
@@ -186,18 +198,101 @@ endblock %} {% block content %}
 </div>
 {% endblock %} {% block extra_js %}
 <script>
-  function validateEmail() {
-    const emailInput = document.getElementById("email");
-    const emailError = document.getElementById("emailError");
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  function validatePhone(phone) {
+    // Valid South African phone formats
+    return /^(\+27|0)[6-8][0-9]{8}$/.test(phone);
+  }
 
-    if (!emailRegex.test(emailInput.value)) {
-      emailError.textContent = "Please enter a valid email address";
-      return false;
+  function validateEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  function validateName(name) {
+    return name.length >= 2;
+  }
+
+  function validateForm() {
+    let isValid = true;
+
+    // Clear previous errors
+    const errorSpans = document.querySelectorAll(".error");
+    errorSpans.forEach((span) => (span.textContent = ""));
+
+    // Validate First Name
+    const firstName = document.getElementById("Firstname").value.trim();
+    if (!firstName) {
+      document.getElementById("firstnameError").textContent =
+        "First name is required";
+      isValid = false;
+    } else if (!validateName(firstName)) {
+      document.getElementById("firstnameError").textContent =
+        "First name must be at least 2 characters";
+      isValid = false;
     }
 
-    emailError.textContent = "";
-    return true;
+    // Validate Last Name
+    const lastName = document.getElementById("lastname").value.trim();
+    if (!lastName) {
+      document.getElementById("lastnameError").textContent =
+        "Last name is required";
+      isValid = false;
+    } else if (!validateName(lastName)) {
+      document.getElementById("lastnameError").textContent =
+        "Last name must be at least 2 characters";
+      isValid = false;
+    }
+
+    // Validate Phone
+    const phone = document.getElementById("phone-number").value.trim();
+    if (!phone) {
+      document.getElementById("phoneError").textContent =
+        "Phone number is required";
+      isValid = false;
+    } else if (!validatePhone(phone)) {
+      document.getElementById("phoneError").textContent =
+        "Please enter a valid South African phone number";
+      isValid = false;
+    }
+
+    // Validate Email
+    const email = document.getElementById("email").value.trim();
+    if (!email) {
+      document.getElementById("emailError").textContent = "Email is required";
+      isValid = false;
+    } else if (!validateEmail(email)) {
+      document.getElementById("emailError").textContent =
+        "Please enter a valid email address";
+      isValid = false;
+    }
+
+    return isValid;
   }
+
+  // Add real-time validation
+  document.addEventListener("DOMContentLoaded", function () {
+    // Real-time email validation
+    document.getElementById("email").addEventListener("blur", function () {
+      const email = this.value.trim();
+      if (email && !validateEmail(email)) {
+        document.getElementById("emailError").textContent =
+          "Please enter a valid email address";
+      } else {
+        document.getElementById("emailError").textContent = "";
+      }
+    });
+
+    // Real-time phone validation
+    document
+      .getElementById("phone-number")
+      .addEventListener("blur", function () {
+        const phone = this.value.trim();
+        if (phone && !validatePhone(phone)) {
+          document.getElementById("phoneError").textContent =
+            "Please enter a valid South African phone number";
+        } else {
+          document.getElementById("phoneError").textContent = "";
+        }
+      });
+  });
 </script>
 {% endblock %}
